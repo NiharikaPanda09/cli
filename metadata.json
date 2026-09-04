@@ -1,0 +1,24 @@
+{
+  "cli_version": "0.10.4-nightly.202609010627.a218ec13a",
+  "checkpoint_id": "01M1PAKH9R0VGMEQGVK28WE9N3",
+  "strategy": "manual-commit",
+  "branch": "feat/windows-powershell-installer",
+  "checkpoints_count": 1,
+  "files_touched": null,
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 27326,
+    "cache_creation_tokens": 2592614,
+    "cache_read_tokens": 89666664,
+    "output_tokens": 325486,
+    "api_call_count": 245
+  }
+}
