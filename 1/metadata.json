@@ -1,0 +1,59 @@
+{
+  "cli_version": "0.10.4-nightly.202609010627.a218ec13a",
+  "checkpoint_id": "01M1PB990TY9KJS5W1M9EKSTR7",
+  "session_id": "9c4c935b-4e1f-4a75-ae03-ff4030fc734e",
+  "strategy": "manual-commit",
+  "created_at": "2026-09-04T13:56:14.579033Z",
+  "branch": "feat/windows-powershell-installer",
+  "checkpoints_count": 2,
+  "save_step_count": 1,
+  "files_touched": [
+    "scripts/test/e2e.ps1"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-1",
+  "turn_id": "b7fc5415271e",
+  "checkpoint_transcript_start": 1733,
+  "transcript_lines_at_start": 1733,
+  "compact_transcript_start": 294,
+  "token_usage": {
+    "input_tokens": 666,
+    "cache_creation_tokens": 14490,
+    "cache_read_tokens": 5001403,
+    "output_tokens": 7614,
+    "api_call_count": 10
+  },
+  "session_metrics": {
+    "turn_count": 25
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-09-04T13:56:14.442728Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 0,
+    "total_lines_changed": 0,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 16,
+      "user_lines_removed": 7,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "scripts/install.ps1": 5,
+        "scripts/test/Installer.Tests.ps1": 9,
+        "scripts/test/e2e.ps1": 2
+      },
+      "user_removed_per_file": {
+        "scripts/install.ps1": 2,
+        "scripts/test/Installer.Tests.ps1": 5
+      }
+    }
+  ]
+}
