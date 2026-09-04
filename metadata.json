@@ -3,8 +3,11 @@
   "checkpoint_id": "01M1PAXDCKCRKCNN6C357AB4K9",
   "strategy": "manual-commit",
   "branch": "feat/windows-powershell-installer",
-  "checkpoints_count": 1,
-  "files_touched": null,
+  "checkpoints_count": 2,
+  "files_touched": [
+    "scripts/install.ps1",
+    "scripts/test/Installer.Tests.ps1"
+  ],
   "sessions": [
     {
       "metadata": "/0/metadata.json",
@@ -12,13 +15,20 @@
       "compact_transcript": "/0/transcript.jsonl",
       "content_hash": "/0/content_hash.txt",
       "prompt": "/0/prompt.txt"
+    },
+    {
+      "metadata": "/1/metadata.json",
+      "transcript": "/1/full.jsonl",
+      "compact_transcript": "/1/transcript.jsonl",
+      "content_hash": "/1/content_hash.txt",
+      "prompt": "/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 28200,
-    "cache_creation_tokens": 2615655,
-    "cache_read_tokens": 94839088,
-    "output_tokens": 341337,
-    "api_call_count": 253
+    "input_tokens": 28260,
+    "cache_creation_tokens": 2618302,
+    "cache_read_tokens": 95820333,
+    "output_tokens": 342901,
+    "api_call_count": 255
   }
 }

@@ -1,0 +1,50 @@
+<cross-session-message from="bridge:session_01PGkb9oEHJrrQYAmMvQAJKA" from-name="win-backend" from-mode="prompting">
+Step 8 PASSES — the WM_SETTINGCHANGE broadcast works on real Windows 11 ARM64 / Windows Terminal, no logout. Step 9 restore is done and verified. Run complete.
+
+## Step 8 — MATCHED ✅
+User's new tab, verbatim:
+```
+PS C:\Users\Victor> ($env:Path -split ';') -match 'entire-test'
+C:\Users\Victor\entire-test-nightly
+C:\Users\Victor\entire-test-bin
+PS C:\Users\Victor>
+```
+Both directories present in a **new process's env block**, in the order the installer wrote them, without a logout or a reboot. That is the real broadcast test — not the HKCU read we both nearly shipped — and `Publish-EnvironmentChange` passes it on real hardware. Note the prompt is `PS C:\Users\Victor>`, i.e. a fresh shell at the profile root rather than one inheriting a working directory.
+
+**One caveat, stated plainly: I did not get confirmation of how the tab was opened.** I asked for "+" versus spawned-from-an-existing-shell and the user pasted the result without answering. The result is still meaningful — a shell spawned from a pre-change parent would have shown *nothing*, since it would inherit the stale block — so something in the chain picked up the new value, which is the property we care about. But I can't tell you whether that was Windows Terminal processing the broadcast or WT re-reading the registry when it builds a new tab's environment. If you need those distinguished, it needs another pass with the method pinned down. I'd rather flag that than let "broadcast confirmed" carry more weight than the evidence does.
+
+## Step 9 — restore verified ✅
+```
+PATH restored exactly: True
+kind: String
+broadcast sent
+=== leftovers ===
+entire-test-bin    : False
+entire-test-nightly: False
+TEMP\entire-cli    : False
+TEMP\install.ps1   : False
+.local\bin intact  : True
+=== scoop ===
+entire  0.10.5  entire  2026-09-04 11:02:19
+=== entire resolution order ===
+C:\Users\Victor\tools2\entire.exe
+C:\Users\Victor\tools\entire.exe
+C:\Users\Victor\scoop\shims\entire.exe
+```
+User PATH byte-identical to the snapshot, still REG_SZ. Resolution order back to tools2 → tools → shim. Scoop untouched at 0.10.5 with its original timestamp. `.local\bin\git-remote-entire.exe` untouched, as agreed.
+
+Two deviations from your step 9, both deliberate:
+- **I used `[Enum]::Parse([Microsoft.Win32.RegistryValueKind], $snap.Kind)`** instead of `[Microsoft.Win32.RegistryValueKind]::($snap.Kind)`. The `::($var)` form is not valid static-member syntax in Windows PowerShell 5.1 — it would have thrown mid-restore, after `Stop-Process` and before the PATH write. Worth fixing in your runbook; it's the one line in the whole plan that had to work on the failure path.
+- **I sent a WM_SETTINGCHANGE broadcast after restoring.** Your step 9 writes the registry but doesn't announce it, so the user's already-open Windows Terminal would keep handing new tabs the test PATH until it restarted — the exact mechanism step 8 just proved works, left un-fired on the way out. Restoring the value without publishing it is a half-restore.
+
+Left behind, as you confirmed: Pester 5.9.1, PSScriptAnalyzer 1.25.0, NuGet provider 2.8.5.208 — all CurrentUser-scoped, all user-approved.
+
+## Final tally on this machine
+Windows 11 Pro 26200, **ARM64**, Windows PowerShell 5.1.26100.9168 only (no pwsh), Scoop present, three pre-existing `entire.exe`, one of them on the machine PATH.
+
+Passed: 1 (prereqs, `arm64` off HKLM), 2 (50/50 incl. all 10 Windows-only), 3 (Scoop branch, throw, session survives), 4 (archive-despite-Scoop, REG_SZ preserved, remainder byte-identical, machine-conflict branch), 5 (running-image swap against a genuinely locked `entire mcp`, `.old` swept), 6 (nightly arm64, registry ordering), 7 (5.1 file contract, one `Error:` line, exit 1), 8 (broadcast), 9 (restore).
+
+Findings raised: the dangling usage sentence (fixed, 26845db9e); the conflict detector's process-PATH blind spot (fix in progress); the NuGet provider bootstrap on stock 5.1 (going into init.ps1 + docs); the 0-manifest display artefact (resolved as not-a-bug, note for the bucket repo); and, unrelated to the branch, the user's stranded `git-remote-entire.exe` in a `.local\bin` that is on no PATH, which breaks `entire://` clones on this box.
+
+Nothing outstanding on my side. Ping me if the conflict-detector SHA is worth a step-6 re-run.
+</cross-session-message>
