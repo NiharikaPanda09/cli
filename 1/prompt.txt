@@ -1,0 +1,32 @@
+<cross-session-message from="uds:/tmp/cc-socks/8913.sock" from-name="implementer" from-mode="prompting">
+Three commits pushed to feat/windows-powershell-installer (plain pushes; tip 75f72f854): task 12 = 883efe597 "Name access denied as such when a binary cannot be written.", task 13 = 78690a1e3 "List every entire.exe on the stored PATH in the conflict report.", task 14 = 75f72f854 "Add a bootstrap for the installer tests on a fresh machine." Suite 52 passed / 10 skipped, linter 0 with settings, fake-scoop clean.
+
+## Task 12 — measured exception shapes (pwsh 7.6.5, macOS, chmod 555 directory)
+```
+Move-Item into read-only dir:      System.UnauthorizedAccessException HResult=0x80070005 -> inner System.IO.IOException HResult=0x0000000D
+Copy-Item into read-only dir:      same shape
+[IO.Directory]::CreateDirectory:   System.Management.Automation.MethodInvocationException HResult=0x80131501 -> UnauthorizedAccessException 0x80070005 -> IOException 0x0000000D
+[IO.File]::Open(Write) denied:     same MethodInvocationException wrapper
+constructed: UnauthorizedAccessException 0x80070005; [IO.IOException]::new(msg, 0x80070020) 0x80070020
+```
+So provider cmdlets surface the .NET exception directly; .NET method calls wrap it once more. `Get-WriteFailureKind` walks `.InnerException`, type before HResult: `UnauthorizedAccessException` or HResult 0x80070005 → `denied`; `IOException` with 0x80070020/0x80070021 → `held`; else `other`. `Get-WriteFailureMessage -Action -Path -Directory -Exception` produces: denied → `Access denied writing to <dir>. Run PowerShell as Administrator, or pass -InstallDir with a directory you can write to. (<msg>)`; held → the existing held-open text; other → `Could not <action> <path>. (<msg>)`, no remedy. Applied at the Move-Item retire, the Copy-Item (rollback kept, then classified throw instead of raw rethrow), and directory creation via a new `Initialize-InstallDirectory` (the CreateDirectory call had no handler). Tests: 8 classifier cases incl. both `RuntimeException`-wrapped shapes; "denied, not held" for `Install-BinaryFile` (target bytes unchanged) and for `Initialize-InstallDirectory`, both any-OS via a read-only directory (`chmod 555` here; `icacls /deny <user>:(W)` on Windows, undone in finally — first Windows run of that ACL path is CI's). The existing FileShare::None Windows case is the classifier's `held` negative. 5.1 shapes remain CI's; the walk tolerates a wrapper on either side.
+
+## Task 13 — union of process and stored PATH
+New `Get-EntireCopy`: process copies first via `Get-EntireOnPath` (Get-Command order, unchanged), then every directory in the stored user PATH (`Get-UserEnvironmentValue -Name Path`, expanded for lookup) and the stored machine PATH (`[Environment]::GetEnvironmentVariable('Path','Machine')`, already the expanded read the `$machineConflict` check uses) that holds an `entire.exe`, deduplicated with `Test-SamePath`. In the direct-install conflict block `$conflicting` now comes from `Get-EntireCopy`; `$first` / `$firstIsOurs` / `$machineConflict` still key on `Get-EntireOnPath`. One consequence handled: with `-NoPathUpdate` the process PATH can have no entire at all while stored copies list, so `$firstIsOurs` guards `$null -ne $first` and the report prints "'entire' does not resolve to an executable on this shell's PATH." instead of dereferencing nothing. `Get-UserEnvironmentValue` now returns `$null` when there is no `HKCU:` drive (`Get-Item -ErrorAction SilentlyContinue`), which is what made the function testable here without an empty catch — the linter flagged my first try/catch version, correctly. Measurement on this machine is mocked: `Get-EntireOnPath` → one `$TestDrive\proc\entire.exe`, `Get-UserEnvironmentValue` → `"$storedDir;$processDir"` → result `[0]` is the process copy, contains the stored copy, process copy appears once; and a stored PATH of `<dir without entire.exe>;;` adds nothing. Scoop-branch conflict block untouched. Get-EntireOnPath and its behaviour unchanged.
+
+## Task 14 — scripts/test/init.ps1
+Modelled on upstream's `test/bin/init.ps1`: on `PSEdition -eq 'Desktop'` only, `Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Scope CurrentUser -Force` unless `Get-PackageProvider -ListAvailable` already has ≥ that version; then Pester ≥ 5.2.0 and PSScriptAnalyzer ≥ 1.17.1 via `Install-Module -Scope CurrentUser -Force -SkipPublisherCheck`, each skipped when `Get-Module -ListAvailable` already satisfies it (Get-Module rather than Get-InstalledModule so modules installed by other means count). No Pester ceiling: run.ps1's floor is 5.2 and 6.1 is what runs here, so 5.99 would only lock out a working version — said so in a comment. Prints each decision and a "Ready" line. Ran here: `PowerShell 7.6.5 (Core)` → NuGet step skipped, "Pester 6.1.0 is already installed.", "PSScriptAnalyzer 1.25.0 is already installed.", exit 0. Linter 0 on it (it's under scripts/, so `-Recurse` covers it). run.ps1's header points at it; CLAUDE.md got a "Running the Windows Installer Tests" subsection under Development (after Integration Tests) — the one contributor-facing place; README's Windows section is user-facing and unchanged. AGENTS.md is a symlink to CLAUDE.md, so it follows.
+
+## Counts
+52 passed / 10 skipped / 0 failed; `mise run test:ps1` exit 0; fmt clean; install.ps1 all-rules 43 (42 Write-Host — one new line in the report — plus the Information positional), with settings 0. Tree clean.
+</cross-session-message>
+
+---
+
+<task-notification>
+<task-id>b98if5i63</task-id>
+<tool-use-id>toolu_01WQVFhCA4DYGcEecWPh9WJY</tool-use-id>
+<output-file>/private/tmp/claude-501/-Users-gtrrz-victor-wks-cli-uninstall-ext/9c4c935b-4e1f-4a75-ae03-ff4030fc734e/tasks/b98if5i63.output</output-file>
+<status>completed</status>
+<summary>Background command "Watch Tests run for tasks 12-14" completed (exit code 0)</summary>
+</task-notification>
