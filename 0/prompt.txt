@@ -1,0 +1,5 @@
+setup databrick mcp server
+
+---
+
+do it
