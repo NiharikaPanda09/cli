@@ -292,6 +292,7 @@ func TestRoot_VisibleCommandsAreGrouped(t *testing.T) {
 		"checkpoint": groupSessions,
 		"search":     groupSessions,
 		"recap":      groupSessions,
+		"handoff":    groupSessions,
 		"activity":   groupSessions,
 		"dispatch":   groupSessions,
 		"login":      groupAccount,

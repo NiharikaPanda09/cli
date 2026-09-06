@@ -140,8 +140,13 @@ var agentHelpClassification = map[string]agentHelpFacts{
 	"experts":  {agentHelpAudienceReadOnly, false},
 	"labs":     {agentHelpAudienceReadOnly, false},
 	"recap":    {agentHelpAudienceReadOnly, false},
-	"version":  {agentHelpAudienceReadOnly, false},
-	"tokens":   {agentHelpAudienceReadOnly, false},
+	// handoff reads checkpoints and writes nothing, so read-only is defensible.
+	// listed:false is the safe default — promoting a command into the advertised
+	// listing changes what agents run unprompted in every user's repo, which is a
+	// product call for a human to make, not one to take by default.
+	"handoff": {agentHelpAudienceReadOnly, false},
+	"version": {agentHelpAudienceReadOnly, false},
+	"tokens":  {agentHelpAudienceReadOnly, false},
 	// tokens is read-only, which is a claim about its children too — classified
 	// rather than assumed, so a future mutating child cannot inherit the claim.
 	"tokens profile": {agentHelpAudienceReadOnly, false},
