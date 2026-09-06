@@ -1,0 +1,36 @@
+{
+  "repo": "gh/acme/cli",
+  "generated_at": "2026-09-06T10:40:00Z",
+  "head_checkpoint_id": "01JQ8Z9K2M3N4P5Q6R7S8T9V0W",
+  "sections": [
+    {
+      "name": "intent",
+      "items": [
+        { "text": "Add a --json flag to entire recap",
+          "cites": [{ "checkpoint_id": "01JQ8Z9K2M3N4P5Q6R7S8T9V0W", "session_index": 0 }] }
+      ]
+    },
+    {
+      "name": "open_items",
+      "items": [
+        { "text": "recap_test.go still skips the empty-store case",
+          "cites": [{ "checkpoint_id": "01JQ8Z9K2M3N4P5Q6R7S8T9V0W", "session_index": 0 }] }
+      ]
+    },
+    {
+      "name": "dead_ends",
+      "items": [
+        { "text": "go test ./... -run TestRecap — failed 3 times: undefined: recapFlags",
+          "cites": [{ "checkpoint_id": "01JQ8Z9K2M3N4P5Q6R7S8T9V0W", "session_index": 0, "line": 412 }] }
+      ]
+    },
+    { "name": "surface", "items": [], "note": "graph degenerate: no_dependents" },
+    {
+      "name": "stopped",
+      "items": [
+        { "text": "Stopped mid-edit in cmd/entire/cli/recap.go",
+          "cites": [{ "checkpoint_id": "01JQ8Z9K2M3N4P5Q6R7S8T9V0W", "session_index": 0 }] }
+      ]
+    }
+  ]
+}

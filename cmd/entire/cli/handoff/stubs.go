@@ -11,7 +11,6 @@ import "context"
 // WHEN YOU LAND YOUR REAL EXTRACTOR, DELETE ITS LINE BELOW. That deletion is
 // the only edit you make outside your own files.
 //
-//	newDeadEndsExtractor -> Workstream B (deadends.go)
 //	newSurfaceExtractor  -> Workstream B (surface.go), optional
 type notImplemented struct{ name string }
 
@@ -21,5 +20,4 @@ func (n notImplemented) Extract(context.Context, Input) (Section, error) {
 	return Section{Name: n.name, Note: "not implemented"}, nil
 }
 
-func newDeadEndsExtractor() Extractor { return notImplemented{SectionDeadEnds} }
-func newSurfaceExtractor() Extractor  { return notImplemented{SectionSurface} }
+func newSurfaceExtractor() Extractor { return notImplemented{SectionSurface} }
