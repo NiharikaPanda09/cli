@@ -1,0 +1,8 @@
+do this 
+      Specifically:
+      - A --ask flag and a VectorSearcher/restVectorSearcher were added (commit "Add cross-repo retrieval, --ask and --session") that POST a query string to a Databricks Vector Search endpoint (/api/2.0/vector-search/indexes/<name>/query) and turn the results back into cited packet items.
+      - The design relies on a Delta Sync Index with managed embeddings — Databricks does the embedding on both the indexed column and the query itself, so this CLI never calls an embeddings API directly; it's plain net/http, no SDK.
+      - But per the project's own status notes: no Vector Search endpoint or index has ever actually been created in a real Databricks workspace. The retrieval code was tested only against a fake/mocked HTTP server in unit tests, never against live infrastructure.
+      - Also relevant to the current curveball work: that --ask query text (and the auto-derived fallback query built from a checkpoint's summary) is being redacted locally before it's sent out, since it's prompt-shaped text going to an external service.
+
+      So: semantic search over Databricks is designed and coded, but not demonstrated as actually working — it's an untested code path, not a live feature.

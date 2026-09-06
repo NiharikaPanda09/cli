@@ -1,0 +1,62 @@
+{
+  "cli_version": "0.10.5",
+  "checkpoint_id": "01M1TZ8MG0RKM14JG48SCRJTKC",
+  "session_id": "d4004a53-f089-4b14-86f8-f83169e166f7",
+  "strategy": "manual-commit",
+  "created_at": "2026-09-06T09:02:29.876689025Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "cmd/entire/cli/handoff/build.go",
+    "cmd/entire/cli/handoff/globalmemory.go",
+    "cmd/entire/cli/handoff/packet.go",
+    "cmd/entire/cli/handoff/privacy_test.go",
+    "cmd/entire/cli/handoff/render_md.go",
+    "curveball.md"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5",
+  "turn_id": "db3919649a93",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 24,
+    "cache_creation_tokens": 84626,
+    "cache_read_tokens": 1101064,
+    "output_tokens": 5693,
+    "api_call_count": 12
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-09-06T09:02:29.805664685Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 0,
+    "total_lines_changed": 0,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 532,
+      "user_lines_removed": 1,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "BTW Buildathon 2026 - Participant Guide.md": 290,
+        "cmd/entire/cli/handoff/build.go": 7,
+        "cmd/entire/cli/handoff/globalmemory.go": 12,
+        "cmd/entire/cli/handoff/packet.go": 25,
+        "cmd/entire/cli/handoff/privacy_test.go": 140,
+        "cmd/entire/cli/handoff/render_md.go": 21,
+        "curveball.md": 20,
+        "databricks_mcp.log": 17
+      },
+      "user_removed_per_file": {
+        "graph-2-impact.json": 1
+      }
+    }
+  ]
+}
