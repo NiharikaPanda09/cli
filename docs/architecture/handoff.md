@@ -178,12 +178,12 @@ cmd/entire/cli/handoff/
   stopped.go         section 5
   render_md.go       human output
   render_json.go     machine output
-  packet_test.go  deadends_test.go  surface_test.go
-  transcript_realdata_test.go
+  packet_test.go  input_test.go  deadends_test.go
+  surface_test.go  transcript_realdata_test.go
   testdata/transcript.jsonl
 cmd/handoff-databricks/
   main.go  rows.go  upload.go
-  rows_test.go  upload_test.go
+  upload_test.go
   testdata/packet.json
 databricks/ddl.sql
 ```
