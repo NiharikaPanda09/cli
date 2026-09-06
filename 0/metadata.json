@@ -1,0 +1,52 @@
+{
+  "cli_version": "0.10.5",
+  "checkpoint_id": "01M1TX105EAMH54875CXRSRRYQ",
+  "session_id": "3aa3dee4-af68-4f3f-9f0d-f47f29c043a9",
+  "strategy": "manual-commit",
+  "created_at": "2026-09-06T08:23:15.783517296Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "BUILDATHON.md"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5",
+  "turn_id": "f9c9f0b0295d",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 70,
+    "cache_creation_tokens": 157506,
+    "cache_read_tokens": 5429971,
+    "output_tokens": 34412,
+    "api_call_count": 35
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-09-06T08:23:15.741688667Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 3798,
+    "human_modified": 212,
+    "human_removed": 0,
+    "total_committed": 3986,
+    "total_lines_changed": 4223,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 964,
+      "user_lines_removed": 212,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "IMPLEMENTATION_ROADMAP.md": 748,
+        "databricks_mcp.log": 4,
+        "whattodo.md": 212
+      },
+      "user_removed_per_file": {
+        ".whattodo.md": 212
+      }
+    }
+  ]
+}
