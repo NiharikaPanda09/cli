@@ -1,0 +1,48 @@
+{
+  "repo": "gh/NiharikaPanda09/cli",
+  "generated_at": "2026-09-06T07:10:00Z",
+  "head_checkpoint_id": "SAMPLE-NOT-A-REAL-CHECKPOINT",
+  "sections": [
+    {
+      "name": "intent",
+      "items": [
+        { "text": "Add `entire handoff`: a cited packet so a fresh session can orient in one command",
+          "cites": [{ "checkpoint_id": "SAMPLE0000000000000000001", "session_index": 0 }] },
+        { "text": "Ship dead-end mining from transcript result.status — the thing session-handoff cannot do",
+          "cites": [{ "checkpoint_id": "SAMPLE0000000000000000002", "session_index": 0 }] }
+      ]
+    },
+    {
+      "name": "open_items",
+      "items": [
+        { "text": "surface.go is tested only against an injected fake; real `entire graph diff` field names unverified",
+          "cites": [{ "checkpoint_id": "SAMPLE0000000000000000003", "session_index": 0 }] },
+        { "text": "Vector Search index and --ask flag not built; ddl.sql only creates the source view",
+          "cites": [{ "checkpoint_id": "SAMPLE0000000000000000003", "session_index": 0 }] },
+        { "text": "docs/architecture/handoff.md not linked from CLAUDE.md architecture list",
+          "cites": [{ "checkpoint_id": "SAMPLE0000000000000000004", "session_index": 0 }] }
+      ]
+    },
+    {
+      "name": "dead_ends",
+      "items": [
+        { "text": "compact.BuildCondensedEntries — failed: builds tool entries from name/input only, never reads block[\"result\"], so status is discarded before any caller sees it (then: wrote an own parser in transcript.go instead)",
+          "cites": [{ "checkpoint_id": "SAMPLE0000000000000000002", "session_index": 0, "line": 88 }] },
+        { "text": "go build ./cmd/entire/cli/handoff/... — failed 2 times: no required module provides package github.com/go-git/go-git/v5 (then: this repo is on go-git v6)",
+          "cites": [{ "checkpoint_id": "SAMPLE0000000000000000001", "session_index": 0, "line": 214 }] },
+        { "text": "entire graph impact --repo . — failed: impact requires --symbol (then: switched to graph diff, which needs no symbol)",
+          "cites": [{ "checkpoint_id": "SAMPLE0000000000000000003", "session_index": 0, "line": 402 }] },
+        { "text": "entire handoff --limit 5 — failed: hung >10min walking 100 unhydrated checkpoints, one network fetch each (then: added LoadBudget and an attempt cap)",
+          "cites": [{ "checkpoint_id": "SAMPLE0000000000000000004", "session_index": 0, "line": 517 }] }
+      ]
+    },
+    { "name": "surface", "items": [], "note": "graph not run for this sample" },
+    {
+      "name": "stopped",
+      "items": [
+        { "text": "All five sections implemented; lint clean; hooks repaired but this session predates them",
+          "cites": [{ "checkpoint_id": "SAMPLE0000000000000000004", "session_index": 0 }] }
+      ]
+    }
+  ]
+}
