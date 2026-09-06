@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -42,16 +43,16 @@ func ConfigFromEnv() (Config, error) {
 		c.Table = "handoff_packets"
 	}
 	if c.Host == "" {
-		return c, fmt.Errorf("DATABRICKS_HOST is required (use file:///path for local output)")
+		return c, errors.New("DATABRICKS_HOST is required (use file:///path for local output)")
 	}
 	if c.IsLocal() {
 		return c, nil
 	}
 	if c.Token == "" {
-		return c, fmt.Errorf("DATABRICKS_TOKEN is required when DATABRICKS_HOST is a workspace URL")
+		return c, errors.New("DATABRICKS_TOKEN is required when DATABRICKS_HOST is a workspace URL")
 	}
 	if c.VolumePath == "" {
-		return c, fmt.Errorf("DATABRICKS_VOLUME_PATH is required when DATABRICKS_HOST is a workspace URL")
+		return c, errors.New("DATABRICKS_VOLUME_PATH is required when DATABRICKS_HOST is a workspace URL")
 	}
 	return c, nil
 }
@@ -100,7 +101,7 @@ func (u *Uploader) Upload(ctx context.Context, p Packet, payload []byte, now tim
 
 	if u.cfg.IsLocal() {
 		dir := filepath.Join(u.cfg.LocalDir(), repoDir)
-		if err := os.MkdirAll(dir, 0o755); err != nil {
+		if err := os.MkdirAll(dir, 0o750); err != nil {
 			return "", fmt.Errorf("create local output dir: %w", err)
 		}
 		dest := filepath.Join(dir, name)
@@ -117,7 +118,7 @@ func (u *Uploader) Upload(ctx context.Context, p Packet, payload []byte, now tim
 	}
 	req, err := http.NewRequestWithContext(ctx, http.MethodPut, endpoint, bytes.NewReader(payload))
 	if err != nil {
-		return "", err
+		return "", fmt.Errorf("build upload request: %w", err)
 	}
 	req.Header.Set("Authorization", "Bearer "+u.cfg.Token)
 	req.Header.Set("Content-Type", "application/octet-stream")
@@ -138,7 +139,7 @@ func (u *Uploader) CopyInto(ctx context.Context, remotePath string) error {
 		return nil
 	}
 	if u.cfg.WarehouseID == "" {
-		return fmt.Errorf("DATABRICKS_WAREHOUSE_ID is required to run COPY INTO")
+		return errors.New("DATABRICKS_WAREHOUSE_ID is required to run COPY INTO")
 	}
 
 	stmt := fmt.Sprintf(
@@ -151,7 +152,7 @@ func (u *Uploader) CopyInto(ctx context.Context, remotePath string) error {
 		"wait_timeout": "30s",
 	})
 	if err != nil {
-		return err
+		return fmt.Errorf("encode statement request: %w", err)
 	}
 	endpoint, err := u.endpoint(statementsAPIPath)
 	if err != nil {
@@ -159,7 +160,7 @@ func (u *Uploader) CopyInto(ctx context.Context, remotePath string) error {
 	}
 	req, err := http.NewRequestWithContext(ctx, http.MethodPost, endpoint, bytes.NewReader(body))
 	if err != nil {
-		return err
+		return fmt.Errorf("build statement request: %w", err)
 	}
 	req.Header.Set("Authorization", "Bearer "+u.cfg.Token)
 	req.Header.Set("Content-Type", "application/json")
@@ -181,7 +182,7 @@ func (u *Uploader) endpoint(p string) (string, error) {
 		return "", fmt.Errorf("parse DATABRICKS_HOST: %w", err)
 	}
 	if base.Scheme != "https" && base.Host != "127.0.0.1" && !strings.HasPrefix(base.Host, "127.0.0.1:") {
-		return "", fmt.Errorf("DATABRICKS_HOST must use https")
+		return "", errors.New("DATABRICKS_HOST must use https")
 	}
 	return base.String() + p, nil
 }
@@ -194,6 +195,9 @@ func ensureLeadingSlash(p string) string {
 }
 
 func readSnippet(r io.Reader) string {
-	b, _ := io.ReadAll(io.LimitReader(r, 512))
+	b, err := io.ReadAll(io.LimitReader(r, 512))
+	if err != nil {
+		return ""
+	}
 	return strings.TrimSpace(string(b))
 }

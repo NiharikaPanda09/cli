@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"strings"
 	"time"
 )
@@ -94,7 +95,7 @@ func EncodeNDJSON(rows []Row) ([]byte, error) {
 	enc := json.NewEncoder(&b)
 	for _, r := range rows {
 		if err := enc.Encode(r); err != nil {
-			return nil, err
+			return nil, fmt.Errorf("encode row: %w", err)
 		}
 	}
 	return []byte(b.String()), nil

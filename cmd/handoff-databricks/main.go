@@ -45,8 +45,10 @@ func run(ctx context.Context, in string, dryRun bool, stdout, stderr io.Writer) 
 	}
 
 	if dryRun {
-		_, err := stdout.Write(payload)
-		return err
+		if _, err := stdout.Write(payload); err != nil {
+			return fmt.Errorf("write rows: %w", err)
+		}
+		return nil
 	}
 
 	cfg, err := ConfigFromEnv()
@@ -69,7 +71,16 @@ func run(ctx context.Context, in string, dryRun bool, stdout, stderr io.Writer) 
 
 func readInput(in string) ([]byte, error) {
 	if in == "-" || in == "" {
-		return io.ReadAll(os.Stdin)
+		data, err := io.ReadAll(os.Stdin)
+		if err != nil {
+			return nil, fmt.Errorf("read stdin: %w", err)
+		}
+		return data, nil
 	}
-	return os.ReadFile(in)
+	//nolint:gosec // the path is an explicit operator-supplied -in flag
+	data, err := os.ReadFile(in)
+	if err != nil {
+		return nil, fmt.Errorf("read %s: %w", in, err)
+	}
+	return data, nil
 }

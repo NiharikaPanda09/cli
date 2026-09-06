@@ -10,6 +10,11 @@ import (
 	apicheckpoint "github.com/entireio/cli/api/checkpoint"
 )
 
+const (
+	testCheckpointID = "01CP"
+	toolBash         = "Bash"
+)
+
 func loadFixture(t *testing.T) []byte {
 	t.Helper()
 	data, err := os.ReadFile(filepath.Join("testdata", "transcript.jsonl"))
@@ -30,7 +35,7 @@ func TestScanToolCallsOnlyReturnsErrors(t *testing.T) {
 		if c.Status != statusError {
 			t.Errorf("call %q: status = %q, want %q", c.Name, c.Status, statusError)
 		}
-		if strings.Contains(c.Output, "ok") && c.Name == "Bash" && c.Input["command"] == "go build ./..." {
+		if strings.Contains(c.Output, "ok") && c.Name == toolBash && c.Input["command"] == "go build ./..." {
 			t.Error("successful call leaked into results")
 		}
 	}
@@ -90,7 +95,7 @@ func TestGroupKeyPrefersCommandThenPath(t *testing.T) {
 		call toolCall
 		want string
 	}{
-		{"bash command", toolCall{Name: "Bash", Input: map[string]any{"command": "go test"}}, "go test"},
+		{"bash command", toolCall{Name: toolBash, Input: map[string]any{"command": "go test"}}, "go test"},
 		{"file path", toolCall{Name: "Edit", Input: map[string]any{"file_path": "a.go"}}, "a.go"},
 		{"tool name fallback", toolCall{Name: "WebFetch"}, "WebFetch"},
 		{"unknown", toolCall{}, "unknown tool"},
@@ -105,16 +110,16 @@ func TestGroupKeyPrefersCommandThenPath(t *testing.T) {
 	}
 }
 
-func fixtureInput(t *testing.T, hasCompactStart bool, start int) Input {
+func fixtureInput(t *testing.T, start int) Input {
 	t.Helper()
 	return Input{
 		Repo: "r",
 		Checkpoints: []Checkpoint{{
-			ID:              "01CP",
+			ID:              testCheckpointID,
 			Metadata:        &apicheckpoint.Metadata{},
 			Transcript:      loadFixture(t),
 			CompactStart:    start,
-			HasCompactStart: hasCompactStart,
+			HasCompactStart: false,
 		}},
 	}
 }
@@ -122,7 +127,7 @@ func fixtureInput(t *testing.T, hasCompactStart bool, start int) Input {
 func TestDeadEndsGroupsRepeatedCommand(t *testing.T) {
 	t.Parallel()
 
-	sec, err := newDeadEndsExtractor().Extract(context.Background(), fixtureInput(t, false, 0))
+	sec, err := newDeadEndsExtractor().Extract(context.Background(), fixtureInput(t, 0))
 	if err != nil {
 		t.Fatalf("Extract: %v", err)
 	}
@@ -141,7 +146,7 @@ func TestDeadEndsGroupsRepeatedCommand(t *testing.T) {
 func TestDeadEndsLegacyCheckpointReadsFromLineZero(t *testing.T) {
 	t.Parallel()
 
-	legacy, err := newDeadEndsExtractor().Extract(context.Background(), fixtureInput(t, false, 99))
+	legacy, err := newDeadEndsExtractor().Extract(context.Background(), fixtureInput(t, 99))
 	if err != nil {
 		t.Fatalf("Extract: %v", err)
 	}
@@ -153,7 +158,7 @@ func TestDeadEndsLegacyCheckpointReadsFromLineZero(t *testing.T) {
 func TestDeadEndsAreCitedWithALine(t *testing.T) {
 	t.Parallel()
 
-	sec, err := newDeadEndsExtractor().Extract(context.Background(), fixtureInput(t, false, 0))
+	sec, err := newDeadEndsExtractor().Extract(context.Background(), fixtureInput(t, 0))
 	if err != nil {
 		t.Fatalf("Extract: %v", err)
 	}
@@ -161,7 +166,7 @@ func TestDeadEndsAreCitedWithALine(t *testing.T) {
 		if len(item.Cites) == 0 {
 			t.Fatalf("item %d has no citation", i)
 		}
-		if item.Cites[0].CheckpointID != "01CP" {
+		if item.Cites[0].CheckpointID != testCheckpointID {
 			t.Errorf("item %d cites %q", i, item.Cites[0].CheckpointID)
 		}
 	}
@@ -170,7 +175,7 @@ func TestDeadEndsAreCitedWithALine(t *testing.T) {
 func TestDeadEndsTruncatesOutput(t *testing.T) {
 	t.Parallel()
 
-	sec, err := newDeadEndsExtractor().Extract(context.Background(), fixtureInput(t, false, 0))
+	sec, err := newDeadEndsExtractor().Extract(context.Background(), fixtureInput(t, 0))
 	if err != nil {
 		t.Fatalf("Extract: %v", err)
 	}
@@ -194,7 +199,7 @@ func TestDeadEndsTruncatesOutput(t *testing.T) {
 func TestDeadEndsNoTranscriptExplainsWhy(t *testing.T) {
 	t.Parallel()
 
-	in := Input{Checkpoints: []Checkpoint{{ID: "01CP", Metadata: &apicheckpoint.Metadata{}}}}
+	in := Input{Checkpoints: []Checkpoint{{ID: testCheckpointID, Metadata: &apicheckpoint.Metadata{}}}}
 	sec, err := newDeadEndsExtractor().Extract(context.Background(), in)
 	if err != nil {
 		t.Fatalf("Extract: %v", err)
@@ -211,7 +216,7 @@ func TestDeadEndsNoErrorsExplainsWhy(t *testing.T) {
 	t.Parallel()
 
 	clean := []byte(`{"v":1,"type":"assistant","id":"m","content":[{"type":"tool_use","id":"t","name":"Bash","input":{"command":"go build"},"result":{"output":"ok","status":"success"}}]}` + "\n")
-	in := Input{Checkpoints: []Checkpoint{{ID: "01CP", Metadata: &apicheckpoint.Metadata{}, Transcript: clean}}}
+	in := Input{Checkpoints: []Checkpoint{{ID: testCheckpointID, Metadata: &apicheckpoint.Metadata{}, Transcript: clean}}}
 
 	sec, err := newDeadEndsExtractor().Extract(context.Background(), in)
 	if err != nil {

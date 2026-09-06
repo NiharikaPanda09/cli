@@ -2,6 +2,7 @@ package handoff
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 )
 
@@ -26,5 +27,8 @@ func RenderJSON(w io.Writer, p Packet) error {
 	}
 	enc := json.NewEncoder(w)
 	enc.SetIndent("", "  ")
-	return enc.Encode(p)
+	if err := enc.Encode(p); err != nil {
+		return fmt.Errorf("encode packet: %w", err)
+	}
+	return nil
 }

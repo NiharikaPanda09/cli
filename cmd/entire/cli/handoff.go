@@ -93,9 +93,15 @@ func runHandoff(ctx context.Context, out io.Writer, f *handoffFlags) error {
 	packet := handoff.Build(ctx, in, f.noGraph)
 
 	if f.format == handoffFormatJSON {
-		return handoff.RenderJSON(out, packet)
+		if err := handoff.RenderJSON(out, packet); err != nil {
+			return fmt.Errorf("render packet: %w", err)
+		}
+		return nil
 	}
-	return handoff.RenderMarkdown(out, packet)
+	if err := handoff.RenderMarkdown(out, packet); err != nil {
+		return fmt.Errorf("render packet: %w", err)
+	}
+	return nil
 }
 
 // handoffRepoName identifies the repo for the packet header.
@@ -120,7 +126,7 @@ func handoffRepoName(ctx context.Context) string {
 // handoffHeadCheckpoint returns the checkpoint ID on HEAD's Entire-Checkpoint
 // trailer, or "" when HEAD carries none. Absence is normal -- the working tree
 // may simply be ahead of the last checkpointed commit -- so it is never an error.
-func handoffHeadCheckpoint(ctx context.Context, repo *git.Repository) string {
+func handoffHeadCheckpoint(_ context.Context, repo *git.Repository) string {
 	head, err := repo.Head()
 	if err != nil {
 		return ""

@@ -127,7 +127,11 @@ func TestUploadPutsToFilesAPIWithBearer(t *testing.T) {
 		gotMethod = r.Method
 		gotPath = r.URL.Path
 		gotAuth = r.Header.Get("Authorization")
-		gotBody, _ = readAll(r)
+		var rerr error
+		gotBody, rerr = readAll(r)
+		if rerr != nil {
+			t.Errorf("read body: %v", rerr)
+		}
 		w.WriteHeader(http.StatusOK)
 	}))
 	defer srv.Close()
@@ -161,9 +165,18 @@ func TestCopyIntoStatementCarriesNoPacketText(t *testing.T) {
 	var stmt string
 	srv := httptest.NewTLSServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		var body map[string]any
-		raw, _ := readAll(r)
-		_ = json.Unmarshal(raw, &body)
-		stmt, _ = body["statement"].(string)
+		raw, rerr := readAll(r)
+		if rerr != nil {
+			t.Errorf("read body: %v", rerr)
+		}
+		if uerr := json.Unmarshal(raw, &body); uerr != nil {
+			t.Errorf("unmarshal body: %v", uerr)
+		}
+		s, ok := body["statement"].(string)
+		if !ok {
+			t.Errorf("statement missing or not a string: %v", body["statement"])
+		}
+		stmt = s
 		w.WriteHeader(http.StatusOK)
 	}))
 	defer srv.Close()
@@ -197,7 +210,9 @@ func TestUploadSurfacesServerError(t *testing.T) {
 
 	srv := httptest.NewTLSServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
 		w.WriteHeader(http.StatusForbidden)
-		_, _ = w.Write([]byte(`{"error":"denied"}`))
+		if _, werr := w.Write([]byte(`{"error":"denied"}`)); werr != nil {
+			t.Errorf("write: %v", werr)
+		}
 	}))
 	defer srv.Close()
 

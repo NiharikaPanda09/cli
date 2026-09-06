@@ -2,6 +2,7 @@ package handoff
 
 import (
 	"context"
+	"fmt"
 	"sort"
 
 	apicheckpoint "github.com/entireio/cli/api/checkpoint"
@@ -40,7 +41,7 @@ func Load(ctx context.Context, store Store, opts LoadOptions) (Input, error) {
 
 	infos, err := store.List(ctx)
 	if err != nil {
-		return in, err
+		return in, fmt.Errorf("list checkpoints: %w", err)
 	}
 	// List order is not guaranteed; the whole contract is newest-first.
 	sort.Slice(infos, func(i, j int) bool {
@@ -51,13 +52,13 @@ func Load(ctx context.Context, store Store, opts LoadOptions) (Input, error) {
 		infos = skipUntil(infos, opts.Checkpoint)
 	}
 
-	max := opts.Limit
-	if max <= 0 {
-		max = DefaultLimit
+	limit := opts.Limit
+	if limit <= 0 {
+		limit = DefaultLimit
 	}
 
 	for _, info := range infos {
-		if len(in.Checkpoints) >= max {
+		if len(in.Checkpoints) >= limit {
 			break
 		}
 		if info.ListedStub {

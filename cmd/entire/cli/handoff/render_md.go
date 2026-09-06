@@ -54,8 +54,10 @@ func RenderMarkdown(w io.Writer, p Packet) error {
 		}
 	}
 
-	_, err := io.WriteString(w, b.String())
-	return err
+	if _, err := io.WriteString(w, b.String()); err != nil {
+		return fmt.Errorf("write handoff markdown: %w", err)
+	}
+	return nil
 }
 
 // formatCites renders the provenance suffix. Every item has at least one

@@ -132,12 +132,12 @@ func cleanWhitespace(s string) string {
 	return strings.Join(strings.Fields(s), " ")
 }
 
-func truncate(s string, max int) string {
-	if len(s) <= max {
+func truncate(s string, limit int) string {
+	if len(s) <= limit {
 		return s
 	}
-	cut := s[:max]
-	if i := strings.LastIndexByte(cut, ' '); i > max/2 {
+	cut := s[:limit]
+	if i := strings.LastIndexByte(cut, ' '); i > limit/2 {
 		cut = cut[:i]
 	}
 	return cut + "…"
