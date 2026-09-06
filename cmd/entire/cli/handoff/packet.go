@@ -2,6 +2,7 @@ package handoff
 
 import (
 	"context"
+	"fmt"
 	"time"
 
 	apicheckpoint "github.com/entireio/cli/api/checkpoint"
@@ -60,6 +61,23 @@ type Input struct {
 	Head        string
 	Checkpoints []Checkpoint
 	Graph       GraphRunner
+	Listed      int
+	Unreadable  int
+	Truncated   bool
+}
+
+func (in Input) emptyRangeNote() string {
+	if in.Unreadable > 0 {
+		note := fmt.Sprintf("%d of %d checkpoints in range could not be read; run `entire checkpoint list` to check they are fetched", in.Unreadable, in.Listed)
+		if in.Truncated {
+			note += "; gave up early to avoid a long wait"
+		}
+		return note
+	}
+	if in.Truncated {
+		return "gave up reading checkpoints early to avoid a long wait"
+	}
+	return noCheckpointsNote
 }
 
 type Extractor interface {
@@ -82,7 +100,7 @@ func section(name string, items []Item, emptyNote string) Section {
 
 func emptyNoteFor(in Input, reason string) string {
 	if len(in.Checkpoints) == 0 {
-		return noCheckpointsNote
+		return in.emptyRangeNote()
 	}
 	return reason
 }

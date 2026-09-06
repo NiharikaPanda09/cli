@@ -59,7 +59,7 @@ func (surfaceExtractor) Name() string { return SectionSurface }
 
 func (surfaceExtractor) Extract(ctx context.Context, in Input) (Section, error) {
 	if len(in.Checkpoints) == 0 {
-		return section(SectionSurface, nil, noCheckpointsNote), nil
+		return section(SectionSurface, nil, in.emptyRangeNote()), nil
 	}
 
 	runner := in.Graph

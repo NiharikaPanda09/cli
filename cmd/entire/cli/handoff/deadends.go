@@ -30,7 +30,7 @@ func (deadEndsExtractor) Name() string { return SectionDeadEnds }
 
 func (deadEndsExtractor) Extract(_ context.Context, in Input) (Section, error) {
 	if len(in.Checkpoints) == 0 {
-		return section(SectionDeadEnds, nil, noCheckpointsNote), nil
+		return section(SectionDeadEnds, nil, in.emptyRangeNote()), nil
 	}
 
 	byKey := make(map[string]*deadEnd)

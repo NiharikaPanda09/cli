@@ -234,3 +234,30 @@ func TestRenderJSONNeverEmitsNullArrays(t *testing.T) {
 		t.Errorf("Repo = %q, want %q", got.Repo, "r")
 	}
 }
+
+func TestUnreadableCheckpointsAreReportedNotSilent(t *testing.T) {
+	t.Parallel()
+
+	in := Input{Repo: "r", Listed: 100, Unreadable: 100}
+	p := Build(context.Background(), in, true)
+
+	for _, sec := range p.Sections {
+		if sec.Note == noCheckpointsNote {
+			t.Errorf("section %q claims no checkpoints when 100 were listed but unreadable", sec.Name)
+		}
+		if !strings.Contains(sec.Note, "100") {
+			t.Errorf("section %q should name the count, got %q", sec.Name, sec.Note)
+		}
+	}
+}
+
+func TestTrulyEmptyRangeStillSaysNoCheckpoints(t *testing.T) {
+	t.Parallel()
+
+	p := Build(context.Background(), Input{Repo: "r"}, true)
+	for _, sec := range p.Sections {
+		if sec.Note != noCheckpointsNote {
+			t.Errorf("section %q: Note = %q, want %q", sec.Name, sec.Note, noCheckpointsNote)
+		}
+	}
+}

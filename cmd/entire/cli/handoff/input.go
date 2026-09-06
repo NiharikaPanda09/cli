@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"sort"
+	"time"
 
 	apicheckpoint "github.com/entireio/cli/api/checkpoint"
 	"github.com/entireio/cli/cmd/entire/cli/checkpoint/id"
@@ -31,6 +32,12 @@ type LoadOptions struct {
 // a working session without making the packet too long for an agent to act on.
 const DefaultLimit = 10
 
+const (
+	LoadBudget       = 10 * time.Second
+	minLoadAttempts  = 20
+	loadAttemptScale = 3
+)
+
 // Load walks the store newest-first and assembles the Input.
 //
 // Per-checkpoint failures are skipped rather than fatal: a single unreadable
@@ -57,16 +64,31 @@ func Load(ctx context.Context, store Store, opts LoadOptions) (Input, error) {
 		limit = DefaultLimit
 	}
 
+	deadline := Now().Add(LoadBudget)
+	maxAttempts := limit * loadAttemptScale
+	if maxAttempts < minLoadAttempts {
+		maxAttempts = minLoadAttempts
+	}
+	attempts := 0
+
 	for _, info := range infos {
 		if len(in.Checkpoints) >= limit {
 			break
 		}
+		if ctx.Err() != nil || attempts >= maxAttempts || Now().After(deadline) {
+			in.Truncated = true
+			break
+		}
+		attempts++
+		in.Listed++
 		if info.ListedStub {
+			in.Unreadable++
 			// Names-only remote-discovery entry with nothing hydrated behind it.
 			continue
 		}
 		cp, ok := loadCheckpoint(ctx, store, info)
 		if !ok {
+			in.Unreadable++
 			continue
 		}
 		in.Checkpoints = append(in.Checkpoints, cp)

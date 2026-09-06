@@ -85,7 +85,7 @@ flowchart TB
     subgraph WH["Warehouse — ADDED"]
         direction LR
         T --> U["Delta table<br/>handoff_packets"]
-        U --> V["Vector Search<br/>cross-repo recall"]
+        U -.-> V["Vector Search<br/>NOT BUILT"]
     end
 
     E --> G
@@ -94,7 +94,9 @@ flowchart TB
     classDef added fill:#0E6E6B,stroke:#0B5250,color:#FFFFFF
     classDef exist fill:#7B8598,stroke:#5E6878,color:#FFFFFF
     class A,B,C,D,E,GR exist
-    class F,G,H,I1,I2,I3,I4,I5,P,R1,R2,S,T,U,V added
+    classDef todo fill:none,stroke:#9A5410,stroke-dasharray:4 3,color:#9A5410
+    class F,G,H,I1,I2,I3,I4,I5,P,R1,R2,S,T,U added
+    class V todo
 ```
 
 ---
@@ -144,7 +146,7 @@ milliseconds with no git repository.
 | `cmd/entire/cli/handoff.go` | **ADDED** | The cobra command and its flags |
 | `cmd/entire/cli/setup_handoff_skill.go` | **ADDED** | Managed skill telling a fresh agent to run the command first |
 | `cmd/handoff-databricks/` | **ADDED** | Separate binary: packet JSON → warehouse rows |
-| `databricks/ddl.sql` | **ADDED** | Delta table, volume, and the retrieval view |
+| `databricks/ddl.sql` | **ADDED** | Delta table, volume, and a view *shaped for* retrieval |
 | 4 registration lines | **ADDED** | `root.go`, `agent_help_cmd.go`, `setup.go`, `root_test.go` |
 | `checkpoint.Open` / `PersistentStore` | EXISTED | Reads checkpoints; consumed unchanged |
 | `transcript/compact` | EXISTED | Writes the `result.status` the miner reads |
@@ -297,6 +299,27 @@ never ran.
 
 ---
 
+## Not built
+
+**Vector Search and semantic retrieval do not exist.** `databricks/ddl.sql`
+creates a view shaped so an index *could* be built over `item_text`, but there is
+no index, no embedding, no retrieval notebook, and no `--ask` flag. The dashed
+box in the diagram marks this.
+
+Everything in the packet is **exact string matching**: dead ends group on an
+exact command or path, intent dedup only lowercases and collapses whitespace, and
+"likely closed" is a substring test. Two semantically identical commands written
+differently land in separate entries.
+
+If semantic recall is wanted, this repo already ships `entire search`
+(`search_v4.go`), which sends a *query* to entire-api cells that have already
+indexed pushed checkpoints. That embeds nothing new, since the content is already
+server-side. Databricks Vector Search would instead create a second copy of
+transcript-derived text in a third-party system — a new exposure, which is a
+product decision rather than a technical one.
+
+---
+
 ## Known limits
 
 Stated here rather than discovered later.
@@ -314,7 +337,14 @@ Stated here rather than discovered later.
   an injected fake, so the real `entire graph diff` field names are an informed
   guess. A mismatch degrades to the touched-file list rather than breaking.
 - **Tool output is truncated to ~200 characters.** A security measure, not
-  formatting — transcripts can contain a pasted credential.
+  formatting — transcripts can contain a pasted credential. It is a mitigation,
+  not a guarantee: a short key fits inside the budget. The real protection is the
+  pre-existing redaction pass, which runs before anything is stored, so the
+  packet only ever reads already-scrubbed text.
+- **Reading is bounded.** `Load` gives up after `LoadBudget` (10s) or
+  `minLoadAttempts` attempts, whichever comes first, and says so in the section
+  note. Without that bound a repo whose checkpoints are unhydrated made the
+  command hang for minutes, since every attempt is a network fetch.
 
 ---
 

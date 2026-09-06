@@ -21,7 +21,7 @@ func (stoppedExtractor) Name() string { return SectionStopped }
 // when a handoff matters most.
 func (stoppedExtractor) Extract(_ context.Context, in Input) (Section, error) {
 	if len(in.Checkpoints) == 0 {
-		return section(SectionStopped, nil, noCheckpointsNote), nil
+		return section(SectionStopped, nil, in.emptyRangeNote()), nil
 	}
 	cp := in.Checkpoints[0]
 	cites := cite(cp)
