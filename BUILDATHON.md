@@ -193,8 +193,8 @@ Open any of these with `entire checkpoint explain <id>`.
 | (supporting) | `01M1TRGYGTEBC9AXARF0P0Y156` | `dbd13de` | The labelled sample packet — the output shape the whole product is arguing for. |
 | Last stable state before the Curveball | `01M1TT6RE9KGDW6DN85X2WY26G` | `426cc65` | Cross-repo retrieval, `--ask`, `--session` — the feature the Curveball then forced us to re-examine. |
 | (supporting) | `01M1TX105EAMH54875CXRSRRYQ` | `7d48361` | Pre-curveball stable state: graph evidence captured, submission writeup started. |
-| **Response to the Noon Curveball** | `01M1TZ8MG0RKM14JG48SCRJTKC` | `3a4fec2` | The privacy boundary: redacted egress, `Incomplete` flag, and the redacted-checkpoint tests. |
-| Final implementation and verification | *this commit* | — | Final `BUILDATHON.md`, graph artifacts, verification status. |
+| **Response to the Noon Curveball** | `01M1TZ8MG0RKM14JG48SCRJTKC` | `c334d32` | The privacy boundary: redacted egress, `Incomplete` flag, and the redacted-checkpoint tests. |
+| Final implementation and verification | `01M1TZVMK1JBYMC0VFNTS79F7F` | `70ba6b6` | This writeup against the guide's outline, graph artifacts 2 and 4, the `hasGaps` narrowing, and a green `go build` / `go test` on Go 1.26.8. |
 
 **Disclosed:** the first six commits of this feature carry **no** checkpoint.
 Entire's hooks were installed the whole time, but every invocation silently
