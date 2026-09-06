@@ -31,10 +31,20 @@ func RenderMarkdown(w io.Writer, p Packet) error {
 	}
 	b.WriteString("\n")
 
+	if packetHasIncompleteSection(p) {
+		b.WriteString("\n> **⚠ Incomplete context.** Some checkpoints in range were " +
+			"unreadable, missing, or had redacted fields. Sections marked " +
+			"**(incomplete)** below may not be the whole picture — verify before " +
+			"treating them as authoritative.\n")
+	}
+
 	for _, sec := range p.Sections {
 		title := sectionTitles[sec.Name]
 		if title == "" {
 			title = sec.Name
+		}
+		if sec.Incomplete {
+			title += " (incomplete)"
 		}
 		fmt.Fprintf(b, "\n## %s\n\n", title)
 
@@ -58,6 +68,17 @@ func RenderMarkdown(w io.Writer, p Packet) error {
 		return fmt.Errorf("write handoff markdown: %w", err)
 	}
 	return nil
+}
+
+// packetHasIncompleteSection reports whether any section in the packet was
+// built from a gap-containing range. See Section.Incomplete.
+func packetHasIncompleteSection(p Packet) bool {
+	for _, sec := range p.Sections {
+		if sec.Incomplete {
+			return true
+		}
+	}
+	return false
 }
 
 // formatCites renders the provenance suffix. Every item has at least one

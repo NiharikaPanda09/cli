@@ -24,6 +24,10 @@ func BuildWith(ctx context.Context, in Input, opts BuildOptions) Packet {
 		GeneratedAt: Now().UTC(),
 		Head:        in.Head,
 	}
+	// Privacy Boundary: computed once so every section in this packet carries
+	// the same honest signal about the range it was built from. See
+	// Input.hasGaps and Section.Incomplete.
+	gaps := in.hasGaps()
 	for _, x := range allExtractors(opts) {
 		sec, err := x.Extract(ctx, in)
 		if err != nil {
@@ -31,6 +35,9 @@ func BuildWith(ctx context.Context, in Input, opts BuildOptions) Packet {
 		}
 		if sec.Name == "" {
 			sec.Name = x.Name()
+		}
+		if gaps {
+			sec.Incomplete = true
 		}
 		p.Sections = append(p.Sections, sec)
 	}

@@ -9,6 +9,8 @@ import (
 	"os"
 	"strings"
 	"time"
+
+	"github.com/entireio/cli/redact"
 )
 
 const (
@@ -197,6 +199,16 @@ func (g globalMemoryExtractor) Extract(ctx context.Context, in Input) (Section, 
 	if query == "" {
 		return section(SectionGlobalMemory, nil, "nothing to search on: no intent in range and no --ask given"), nil
 	}
+
+	// Privacy Boundary: query text originates from either --ask (typed
+	// verbatim by the user) or a checkpoint's Summary.Intent -- both are
+	// prompt-shaped text. Neither has been through the checkpoint storage
+	// redaction pipeline by this point, and this is the one place in the
+	// package that leaves the process over the network, to a service Entire
+	// does not control. Redact before it is ever placed in an HTTP request
+	// body, using only the local, non-network scanners (redact.String makes
+	// no outbound call itself).
+	query = redact.String(query)
 
 	hits, err := g.searcher.Query(ctx, truncate(query, maxQueryTextChars), vectorNumResults)
 	if err != nil {

@@ -31,6 +31,12 @@ type Section struct {
 	Name  string `json:"name"`
 	Items []Item `json:"items"`
 	Note  string `json:"note,omitempty"`
+	// Incomplete is true when this section was built from a checkpoint range
+	// that had unreadable, truncated, or redacted/missing data (e.g. a nil
+	// Summary or an empty Transcript). It never means the section is wrong --
+	// only that it may not be the whole picture, so a reader must not treat it
+	// as authoritative on its own.
+	Incomplete bool `json:"incomplete,omitempty"`
 }
 
 type Packet struct {
@@ -64,6 +70,25 @@ type Input struct {
 	Listed      int
 	Unreadable  int
 	Truncated   bool
+}
+
+// hasGaps reports whether this checkpoint range contains evidence of missing
+// or redacted data: unreadable/truncated checkpoints at the range level, or a
+// loaded checkpoint with no Summary or no Transcript. It is the signal every
+// section uses to mark itself Incomplete -- see the Privacy Boundary note on
+// Section.Incomplete. Deliberately over-inclusive: a section that might be
+// missing something must say so, even if that particular section did not end
+// up needing the missing field.
+func (in Input) hasGaps() bool {
+	if in.Unreadable > 0 || in.Truncated {
+		return true
+	}
+	for _, cp := range in.Checkpoints {
+		if cp.Summary == nil || len(cp.Transcript) == 0 {
+			return true
+		}
+	}
+	return false
 }
 
 func (in Input) emptyRangeNote() string {
