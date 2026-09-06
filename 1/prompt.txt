@@ -1,0 +1,93 @@
+easy explain whats ur whole plan, what u have done, and whats remaining, ??
+
+---
+
+are we not doing this and what we are doing and what not and why ?? "tire Handoff: Project Explanation
+
+This document breaks down the `entire handoff` implementation plan in both simple English and deep technical terms, so your whole team is on the same page for the pitch and the build.
+
+---
+
+## 🟢 Part 1: The Simple English Version
+
+Essentially, you are building a new command for your CLI called `entire handoff`. Its job is to read the history of what a previous AI agent tried to do, extract the failures, and pass that knowledge to the next AI agent so it doesn't repeat the same mistakes.
+
+Here is your step-by-step game plan:
+
+**1. The Setup (09:15 - 09:35)**
+* **What you do:** Fork the main code repository, make sure the Go code compiles locally, and run a quick test.
+* **The Goal:** Prove that the logs actually contain the `status:"error"` blocks you need to read. You make a clean "Before" save point (commit) so judges can see where you started.
+
+**2. Building the Skeleton (09:35 - 10:00)**
+* **What you do:** You write the basic outer shell of the `entire handoff` command.
+* **The Goal:** Make it so that typing `entire handoff` in the terminal actually registers as a command, even if it doesn't do the heavy lifting yet.
+
+**3. Setting up the Blueprint (10:00 - 10:15)**
+* **What you do:** You create a structured Go interface (a blueprint called `Packet`).
+* **The Goal:** You are splitting the work into smaller "extractors." This is your insurance policy. When the judges throw a surprise requirement at you at noon (the "Curveball"), you can just plug a new extractor into this blueprint without breaking the rest of your code.
+
+**4. The "Dead-End Miner" (The Core Logic)**
+* **What you do:** You write the code that scans the raw JSON logs of the previous AI agent's session.
+* **The Goal:** Instead of just summarizing the chat, your code specifically hunts for blocks marked `status:"error"`. It grabs exactly what command failed and why, saving it to a list of "dead-ends".
+
+**5. The Output & Databricks Connection**
+* **What you do:** You take that list of dead-ends and format it into a clean, machine-readable JSON packet.
+* **The Goal:** Instead of giving the next AI a human paragraph to read, you give it structured JSON (which AIs are much better at understanding).
+* **The Databricks part:** You use the Databricks Go SDK to send these dead-ends into a Vector Search database. This creates a "global memory"—so if *your* agent fails at something, *my* agent won't try the same thing tomorrow. You then use MLflow to prove this retrieval is accurate.
+
+**6. The Noon Curveball & Final Submission**
+* **What you do:** At 12:00, you will get a surprise requirement. Because you built the "blueprint" in step 3, you just add one new Go file to handle the surprise, run your tests, and push the final code by 15:00.
+
+**In one sentence:** You are writing a Go program that reads old AI error logs, saves them to a Databricks brain, and feeds them to new AIs as a clean JSON packet so they stop repeating the same mistakes.
+
+---
+
+## 🔴 Part 2: The Technical Workflow Version
+
+Here is the technical breakdown of the architecture, data pipeline, and execution workflow you are building for the CLI.
+
+### 1. Architectural Overview
+You are building a **Cobra-based CLI command** (`entire handoff`) in a fork of `entireio/cli`.
+
+To ensure modularity (and protect against the "Noon Curveball"), the architecture uses the **Strategy Pattern**. Instead of monolithic parsing logic, you define a `handoff.Packet` struct and an `Extractor` interface. Different components (Intent, Dead-Ends, Curveball response) act as independent extractors that mutate the `Packet` concurrently or sequentially.
+
+### 2. The Execution Workflow (Runtime)
+When a user (or agent) executes `entire handoff --json`, the following execution flow occurs:
+
+1. **CLI Bootstrap (`cmd/entire/cli/handoff.go`):**
+   * The Cobra command parses flags (`--session`, `--json`, `--checkpoint`).
+   * It initializes the storage backend by calling `checkpoint.Open(...)`, which returns an `api/checkpoint.PersistentStore` interface.
+2. **State Resolution:**
+   * The store resolves the requested session/checkpoint ID.
+   * It calls `ReadSessionMetadataAndPrompts()` and `ReadSessionContent()` to load the raw blob data from the `.git/refs/entire/checkpoints/` namespace.
+3. **The Extractor Pipeline (`packet.go`):**
+   * An empty `handoff.Packet` struct is initialized.
+   * The command iterates through a slice of registered `Extractor` interfaces (e.g., `IntentExtractor`, `DeadEndMiner`).
+   * Each extractor receives the `Context` and the raw session state, executing its isolated logic to populate specific fields in the `Packet`.
+4. **Serialization & Stdout:**
+   * Based on the `--json` flag, the populated `Packet` is marshaled into a strict, machine-readable JSON schema (resolving issue `#1125`) and dumped to `stdout` for the new agent LLM to ingest.
+
+### 3. The Data Pipeline (The "Dead-End Miner")
+This is the core technical complexity of the project.
+* **The Constraint:** You cannot use the existing `compact.BuildCondensedEntries` function because it internally discards the `result.status` field when creating the `CondensedEntry` struct. If you touch the `compact` package, you risk breaking 7 other upstream agent sniffers.
+* **The Implementation:** Your `DeadEndMiner` extractor reads the raw `transcript.jsonl` bytes directly from the persistent store.
+* It parses the v1 JSONL shape (`{v, agent, cli_version, type, ts, id, content[]}`) directly into a custom struct.
+* It slices the objects, searching specifically for `content[].result.status == "error"` (which is written by `buildToolResult` when `tr.isError` is true).
+* It preserves the exact line offsets (`compact_transcript_start`) to maintain citation integrity.
+
+### 4. The Databricks Subsystem (Global State)
+Instead of handoffs being limited to local Git state, you are introducing a globally distributed state using the Databricks Go SDK (`github.com/databricks/databricks-sdk-go`).
+* **Write Path:** Once the `DeadEndMiner` finishes parsing local `status:"error"` blocks, it constructs a vector embedding payload and fires an asynchronous upsert via the Go SDK to a **Databricks Vector Search** index.
+* **Read Path:** During pipeline execution, a `GlobalMemoryExtractor` uses the Go SDK to query the Vector Search endpoint, passing the current session's `Intent` as the vector query. It retrieves semantically similar dead-ends across the *entire organization's* history and appends them to the `Packet`.
+* **Evaluation:** You utilize the Databricks MLflow REST API to track evaluations of this vector retrieval logic locally.
+
+### 5. Git & Integration Workflow
+To ship this rapidly in a 2-hour window without merge conflicts:
+* **Branching:** You are using independent workstreams (`ws/spine`, `ws/deadends`, `ws/sections`).
+* **Integration:** Developer "A" owns the `main` branch. Developers "B" and "C" push their feature branches. "A" merges them locally using `git merge --no-ff` (preserving the commit history for judges) and pushes the final integrated artifact.
+* **Build Constraints:** The project requires CGO because of the `tree-sitter` dependency. The build process uses `mise run build` to compile the Go binary before integration testing.
+"
+
+---
+
+can't we implement whole now, i will connect databrick mcp server
