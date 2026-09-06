@@ -5,7 +5,52 @@
 **This document supersedes the schedule in `IMPLEMENTATION_PLAN.md`** (see §0). The plan's
 *technical* content is still correct and verified — only its clock is wrong.
 
+---
 
+## §0 — Two corrections that change the whole plan. Read before anything else.
+
+### 0.1 The deadline is 15:00, not 16:00 — and we are 80 minutes behind
+
+`IMPLEMENTATION_PLAN.md:4` says "build window 09:00–16:00 IST … Code freeze 16:00."
+The Participant Guide (`BTW Buildathon 2026 - Participant Guide.md`, lines 3 and 14) says:
+
+> "The submission deadline is 3:00 PM IST." — line 3
+> "1:00–3:00 Build session and submission … submit before 3:00 PM." — line 14
+
+**The guide wins.** It is the newer file (09:42 vs 09:14) and it is the organiser's document.
+
+This roadmap was written at **10:19 IST**. Actual remaining budget:
+
+| | Plan assumed | Reality |
+| --- | --- | --- |
+| Start of implementation | 09:15 | **not started — no fork exists** |
+| Curveball | 12:00 | 12:00 (unchanged) |
+| Freeze | 16:00 | **15:00** |
+| Total build minutes | 405 | **~275** |
+
+That is **32% less time than the plan was written for**, and the first 80 minutes are already
+spent. Every schedule below is re-baselined. Two consequences you must accept now:
+
+- **The Databricks lane (`IMPLEMENTATION_PLAN.md` Step 10) is cut.** It was scoped as a 13:00–15:30
+  stretch inside a 7-hour day. In a 4h40m day with a mandatory curveball it cannot land, and a
+  half-built Delta table costs main-challenge points (technical implementation, demo reproducibility)
+  without earning Databricks points. Recommend not opting in. *This is a team call — if you overrule
+  it, cut Workstream C's graph section (§4.3 C4) instead, not the curveball response.*
+- **MCP (`IMPLEMENTATION_PLAN.md` Step 9) is cut** unless the curveball is trivial. Skill first was
+  always the positioning argument; MCP was always optional.
+
+### 0.2 The fork does not exist yet
+
+```
+cli/  entire-graph/  external-agents/   → all at commit 1bf566c, remote DeshDeepakKant/entireio
+```
+
+These are **research clones committed into the planning repo on 3–4 Sep**. They are not the build
+fork and nothing written in them counts. Participant Guide line 93: *"All implementation must happen
+in the clone created through the Entire mirror workflow."*
+
+**Creating the fork and mirror is the single blocking dependency for all three people.** It is
+Milestone M0 and it is owned by A, starting now.
 
 ---
 

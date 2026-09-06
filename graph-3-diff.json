@@ -1,0 +1,3955 @@
+{
+  "base": "dd7eaa8c6",
+  "head": "HEAD",
+  "files": [
+    {
+      "path": ".whattodo.md",
+      "status": "A",
+      "language": "Markdown",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "What-to-do-next",
+          "new_signature": "markdown heading What to do next",
+          "after_start_line": 1,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "0.-Get-the-code-first-it-is-NOT-pushed",
+          "new_signature": "markdown heading 0. Get the code first — it is NOT pushed",
+          "after_start_line": 8,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_1_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 13,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_2_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 19,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_3_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 23,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_4_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 25,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "1.-Set-up-the-Linux-machine",
+          "new_signature": "markdown heading 1. Set up the Linux machine",
+          "after_start_line": 41,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_5_bash",
+          "new_signature": "markdown code fence bash",
+          "after_start_line": 46,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Go-1.26.6-is-required-go.mod-.-Go-1.27.1-was-used-on-macOS-and-works.",
+          "new_signature": "markdown heading Go 1.26.6+ is required (go.mod). Go 1.27.1 was used on macOS and works.",
+          "after_start_line": 47,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Build-and-install-the-CLI-somewhere-on-PATH.",
+          "new_signature": "markdown heading Build and install the CLI somewhere on PATH.",
+          "after_start_line": 50,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_6_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 54,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_7_bash",
+          "new_signature": "markdown code fence bash",
+          "after_start_line": 62,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_8_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 64,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_9_bash",
+          "new_signature": "markdown code fence bash",
+          "after_start_line": 68,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_10_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 71,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_11_bash",
+          "new_signature": "markdown code fence bash",
+          "after_start_line": 75,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_12_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 78,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "2.-Capture-the-three-graph-artefacts-15-points-minutes-of-work",
+          "new_signature": "markdown heading 2. Capture the three graph artefacts — 15 points, minutes of work",
+          "after_start_line": 82,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_13_bash",
+          "new_signature": "markdown code fence bash",
+          "after_start_line": 87,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "then-START-A-FRESH-AGENT-SESSION-so-it-picks-up-the-graph-instructions",
+          "new_signature": "markdown heading then START A FRESH AGENT SESSION so it picks up the graph instructions",
+          "after_start_line": 89,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Artefact-1-a-definition-lookup",
+          "new_signature": "markdown heading Artefact 1 — a definition lookup",
+          "after_start_line": 91,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Artefact-2-impact-analysis-BEFORE-a-high-risk-change-do-it-before-editing",
+          "new_signature": "markdown heading Artefact 2 — impact analysis BEFORE a high-risk change (do it before editing)",
+          "after_start_line": 94,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Artefact-3-semantic-diff-of-the-final-implementation-do-this-last",
+          "new_signature": "markdown heading Artefact 3 — semantic diff of the final implementation (do this last)",
+          "after_start_line": 97,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_14_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 99,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "3.-Write-BUILDATHON.md-required-for-submission",
+          "new_signature": "markdown heading 3. Write `BUILDATHON.md` — required for submission",
+          "after_start_line": 106,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "4.-Finish-the-Databricks-lane-needs-a-workspace",
+          "new_signature": "markdown heading 4. Finish the Databricks lane (needs a workspace)",
+          "after_start_line": 134,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_15_bash",
+          "new_signature": "markdown code fence bash",
+          "after_start_line": 138,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "1.-Apply-the-DDL-it-enables-Change-Data-Feed-and-adds-the-row_id-key.",
+          "new_signature": "markdown heading 1. Apply the DDL — it enables Change Data Feed and adds the row_id key.",
+          "after_start_line": 139,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "A-Delta-Sync-index-fails-with-a-cryptic-error-without-CDF.",
+          "new_signature": "markdown heading A Delta Sync index fails with a cryptic error without CDF.",
+          "after_start_line": 140,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "File:-databricks/ddl.sql",
+          "new_signature": "markdown heading File: databricks/ddl.sql",
+          "after_start_line": 141,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "2.-Create-endpoint-index.-This-is-NOT-SQL-the-exact-REST-calls-are-in",
+          "new_signature": "markdown heading 2. Create endpoint + index. This is NOT SQL; the exact REST calls are in",
+          "after_start_line": 143,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "comments-at-the-bottom-of-ddl.sql.-Roughly:",
+          "new_signature": "markdown heading comments at the bottom of ddl.sql. Roughly:",
+          "after_start_line": 144,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "POST-/api/2.0/vector-search/endpoints-name-:-entire-handoff-...",
+          "new_signature": "markdown heading POST /api/2.0/vector-search/endpoints {\"name\":\"entire-handoff\", ...}",
+          "after_start_line": 145,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "POST-/api/2.0/vector-search/indexes-name-:-main.default.handoff_idx-...",
+          "new_signature": "markdown heading POST /api/2.0/vector-search/indexes {\"name\":\"main.default.handoff_idx\", ...}",
+          "after_start_line": 146,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "3.-Point-the-CLI-at-it",
+          "new_signature": "markdown heading 3. Point the CLI at it",
+          "after_start_line": 148,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "4.-Ingest-and-query",
+          "new_signature": "markdown heading 4. Ingest and query",
+          "after_start_line": 155,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_16_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 158,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_17_bash",
+          "new_signature": "markdown code fence bash",
+          "after_start_line": 166,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_18_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 168,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "5.-Say-only-what-is-true",
+          "new_signature": "markdown heading 5. Say only what is true",
+          "after_start_line": 176,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "6.-Checkpoint-status",
+          "new_signature": "markdown heading 6. Checkpoint status",
+          "after_start_line": 194,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Order-I-would-work-in",
+          "new_signature": "markdown heading Order I would work in",
+          "after_start_line": 205,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/agent_help_cmd.go",
+      "status": "M",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "module",
+          "name": "cmd/entire/cli/agent_help_cmd.go",
+          "before_start_line": 1,
+          "after_start_line": 1,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "handoffFlags",
+          "new_signature": "handoffFlags struct { checkpoint string session string format string limit int noGraph bool ask string }",
+          "after_start_line": 21,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "handoffFlags.checkpoint",
+          "new_signature": "checkpoint string",
+          "after_start_line": 22,
+          "dependents_count": 1796
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "handoffFlags.session",
+          "new_signature": "session string",
+          "after_start_line": 23,
+          "dependents_count": 2158
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "handoffFlags.format",
+          "new_signature": "format string",
+          "after_start_line": 24,
+          "dependents_count": 235
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "handoffFlags.limit",
+          "new_signature": "limit int",
+          "after_start_line": 25,
+          "dependents_count": 168
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "handoffFlags.noGraph",
+          "new_signature": "noGraph bool",
+          "after_start_line": 26,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "handoffFlags.ask",
+          "new_signature": "ask string",
+          "after_start_line": 27,
+          "dependents_count": 94
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "newHandoffCmd",
+          "new_signature": "func newHandoffCmd() *cobra.Command",
+          "after_start_line": 35,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "runHandoff",
+          "new_signature": "func runHandoff(ctx context.Context, out io.Writer, f *handoffFlags) error",
+          "after_start_line": 71,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "handoffRepoName",
+          "new_signature": "func handoffRepoName(ctx context.Context) string",
+          "after_start_line": 121,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "handoffHeadCheckpoint",
+          "new_signature": "func handoffHeadCheckpoint(_ context.Context, repo *git.Repository) string",
+          "after_start_line": 138,
+          "dependents_count": 1
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/build.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "Build",
+          "new_signature": "func Build(ctx context.Context, in Input, noGraph bool) Packet",
+          "after_start_line": 17,
+          "dependents_count": 109
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "BuildWith",
+          "new_signature": "func BuildWith(ctx context.Context, in Input, opts BuildOptions) Packet",
+          "after_start_line": 21,
+          "dependents_count": 3
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/deadends.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "deadEnd",
+          "new_signature": "deadEnd struct { Key string Count int Line int Output string Followup string Cite Citation }",
+          "after_start_line": 16,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "deadEnd.Key",
+          "new_signature": "Key string",
+          "after_start_line": 17,
+          "dependents_count": 37
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "deadEnd.Count",
+          "new_signature": "Count int",
+          "after_start_line": 18,
+          "dependents_count": 114
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "deadEnd.Line",
+          "new_signature": "Line int",
+          "after_start_line": 19,
+          "dependents_count": 100
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "deadEnd.Output",
+          "new_signature": "Output string",
+          "after_start_line": 20,
+          "dependents_count": 266
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "deadEnd.Followup",
+          "new_signature": "Followup string",
+          "after_start_line": 21,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "deadEnd.Cite",
+          "new_signature": "Cite Citation",
+          "after_start_line": 22,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "deadEndsExtractor",
+          "new_signature": "deadEndsExtractor struct{}",
+          "after_start_line": 25,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "newDeadEndsExtractor",
+          "new_signature": "func newDeadEndsExtractor() Extractor",
+          "after_start_line": 27,
+          "dependents_count": 8
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "deadEndsExtractor.Name",
+          "new_signature": "func (deadEndsExtractor) Name() string",
+          "after_start_line": 29,
+          "dependents_count": 1500
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "deadEndsExtractor.Extract",
+          "new_signature": "func (deadEndsExtractor) Extract(_ context.Context, in Input) (Section, error)",
+          "after_start_line": 31,
+          "dependents_count": 53
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "deadEnd.describe",
+          "new_signature": "func (d *deadEnd) describe() string",
+          "after_start_line": 105,
+          "dependents_count": 11
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "anyTranscript",
+          "new_signature": "func anyTranscript(in Input) bool",
+          "after_start_line": 122,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "cleanWhitespace",
+          "new_signature": "func cleanWhitespace(s string) string",
+          "after_start_line": 131,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "truncate",
+          "new_signature": "func truncate(s string, limit int) string",
+          "after_start_line": 135,
+          "dependents_count": 13
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/deadends_test.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "loadFixture",
+          "new_signature": "func loadFixture(t *testing.T) []byte",
+          "after_start_line": 18,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestScanToolCallsOnlyReturnsErrors",
+          "new_signature": "func TestScanToolCallsOnlyReturnsErrors(t *testing.T)",
+          "after_start_line": 27,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestScanToolCallsSkipsUnparseableLines",
+          "new_signature": "func TestScanToolCallsSkipsUnparseableLines(t *testing.T)",
+          "after_start_line": 44,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestScanToolCallsKeepsFollowupText",
+          "new_signature": "func TestScanToolCallsKeepsFollowupText(t *testing.T)",
+          "after_start_line": 52,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestScanToolCallsHonoursCompactStart",
+          "new_signature": "func TestScanToolCallsHonoursCompactStart(t *testing.T)",
+          "after_start_line": 64,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestScanToolCallsDedupesRepeatedHeadLine",
+          "new_signature": "func TestScanToolCallsDedupesRepeatedHeadLine(t *testing.T)",
+          "after_start_line": 79,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestGroupKeyPrefersCommandThenPath",
+          "new_signature": "func TestGroupKeyPrefersCommandThenPath(t *testing.T)",
+          "after_start_line": 90,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "fixtureInput",
+          "new_signature": "func fixtureInput(t *testing.T, start int) Input",
+          "after_start_line": 113,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestDeadEndsGroupsRepeatedCommand",
+          "new_signature": "func TestDeadEndsGroupsRepeatedCommand(t *testing.T)",
+          "after_start_line": 127,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestDeadEndsLegacyCheckpointReadsFromLineZero",
+          "new_signature": "func TestDeadEndsLegacyCheckpointReadsFromLineZero(t *testing.T)",
+          "after_start_line": 146,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestDeadEndsAreCitedWithALine",
+          "new_signature": "func TestDeadEndsAreCitedWithALine(t *testing.T)",
+          "after_start_line": 158,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestDeadEndsTruncatesOutput",
+          "new_signature": "func TestDeadEndsTruncatesOutput(t *testing.T)",
+          "after_start_line": 175,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestDeadEndsNoTranscriptExplainsWhy",
+          "new_signature": "func TestDeadEndsNoTranscriptExplainsWhy(t *testing.T)",
+          "after_start_line": 199,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestDeadEndsNoErrorsExplainsWhy",
+          "new_signature": "func TestDeadEndsNoErrorsExplainsWhy(t *testing.T)",
+          "after_start_line": 215,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/extractors.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "BuildOptions",
+          "new_signature": "BuildOptions struct { NoGraph bool Searcher VectorSearcher Ask string }",
+          "after_start_line": 11,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "BuildOptions.NoGraph",
+          "new_signature": "NoGraph bool",
+          "after_start_line": 12,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "BuildOptions.Searcher",
+          "new_signature": "Searcher VectorSearcher",
+          "after_start_line": 13,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "BuildOptions.Ask",
+          "new_signature": "Ask string",
+          "after_start_line": 14,
+          "dependents_count": 9
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "allExtractors",
+          "new_signature": "func allExtractors(opts BuildOptions) []Extractor",
+          "after_start_line": 17,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "noGraph",
+          "new_signature": "func noGraph(o BuildOptions) bool",
+          "after_start_line": 32,
+          "dependents_count": 5
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/globalmemory.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "VectorSearcher",
+          "new_signature": "VectorSearcher interface { Query(ctx context.Context, text string, numResults int) ([]PriorHit, error) }",
+          "after_start_line": 22,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "VectorSearcher.Query",
+          "new_signature": "Query(ctx context.Context, text string, numResults int) ([]PriorHit, error)",
+          "after_start_line": 23,
+          "dependents_count": 91
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "PriorHit",
+          "new_signature": "PriorHit struct { RepoKey string CheckpointID string SessionID int SectionName string ItemText string CiteLine int Score float64 }",
+          "after_start_line": 26,
+          "dependents_count": 10
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "PriorHit.RepoKey",
+          "new_signature": "RepoKey string",
+          "after_start_line": 27,
+          "dependents_count": 20
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "PriorHit.CheckpointID",
+          "new_signature": "CheckpointID string",
+          "after_start_line": 28,
+          "dependents_count": 733
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "PriorHit.SessionID",
+          "new_signature": "SessionID int",
+          "after_start_line": 29,
+          "dependents_count": 1192
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "PriorHit.SectionName",
+          "new_signature": "SectionName string",
+          "after_start_line": 30,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "PriorHit.ItemText",
+          "new_signature": "ItemText string",
+          "after_start_line": 31,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "PriorHit.CiteLine",
+          "new_signature": "CiteLine int",
+          "after_start_line": 32,
+          "dependents_count": 9
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "PriorHit.Score",
+          "new_signature": "Score float64",
+          "after_start_line": 33,
+          "dependents_count": 36
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "VectorConfig",
+          "new_signature": "VectorConfig struct { Host string Token string Index string }",
+          "after_start_line": 36,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "VectorConfig.Host",
+          "new_signature": "Host string",
+          "after_start_line": 37,
+          "dependents_count": 104
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "VectorConfig.Token",
+          "new_signature": "Token string",
+          "after_start_line": 38,
+          "dependents_count": 79
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "VectorConfig.Index",
+          "new_signature": "Index string",
+          "after_start_line": 39,
+          "dependents_count": 63
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "VectorConfigFromEnv",
+          "new_signature": "func VectorConfigFromEnv() (VectorConfig, bool)",
+          "after_start_line": 42,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "restVectorSearcher",
+          "new_signature": "restVectorSearcher struct { cfg VectorConfig client *http.Client }",
+          "after_start_line": 57,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "restVectorSearcher.cfg",
+          "new_signature": "cfg VectorConfig",
+          "after_start_line": 58,
+          "dependents_count": 366
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "restVectorSearcher.client",
+          "new_signature": "client *http.Client",
+          "after_start_line": 59,
+          "dependents_count": 318
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "NewVectorSearcher",
+          "new_signature": "func NewVectorSearcher(cfg VectorConfig) VectorSearcher",
+          "after_start_line": 62,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "vectorQueryRequest",
+          "new_signature": "vectorQueryRequest struct { Columns []string `json:\"columns\"` QueryText string `json:\"query_text\"` NumResults int `json:\"num_results\"` FiltersJSON string `json:\"filters_json,omitempty\"` }",
+          "after_start_line": 66,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "vectorQueryRequest.Columns",
+          "new_signature": "Columns []string",
+          "after_start_line": 67,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "vectorQueryRequest.QueryText",
+          "new_signature": "QueryText string",
+          "after_start_line": 68,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "vectorQueryRequest.NumResults",
+          "new_signature": "NumResults int",
+          "after_start_line": 69,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "vectorQueryRequest.FiltersJSON",
+          "new_signature": "FiltersJSON string",
+          "after_start_line": 70,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "vectorQueryResponse",
+          "new_signature": "vectorQueryResponse struct { Manifest struct { Columns []struct { Name string `json:\"name\"` } `json:\"columns\"` } `json:\"manifest\"` Result struct { DataArray [][]any `json:\"data_array\"` } `json:\"result\"` }",
+          "after_start_line": 73,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "vectorQueryResponse.Manifest",
+          "new_signature": "Manifest struct {\n\t\tColumns []struct {\n\t\t\tName string `json:\"name\"`\n\t\t} `json:\"columns\"`\n\t}",
+          "after_start_line": 74,
+          "dependents_count": 19
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "vectorQueryResponse.Result",
+          "new_signature": "Result struct {\n\t\tDataArray [][]any `json:\"data_array\"`\n\t}",
+          "after_start_line": 79,
+          "dependents_count": 206
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "restVectorSearcher.Query",
+          "new_signature": "func (s *restVectorSearcher) Query(ctx context.Context, text string, numResults int) ([]PriorHit, error)",
+          "after_start_line": 88,
+          "dependents_count": 91
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "hitsFrom",
+          "new_signature": "func hitsFrom(out vectorQueryResponse) []PriorHit",
+          "after_start_line": 125,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "asString",
+          "new_signature": "func asString(v any) string",
+          "after_start_line": 156,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "asInt",
+          "new_signature": "func asInt(v any) int",
+          "after_start_line": 164,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "globalMemoryExtractor",
+          "new_signature": "globalMemoryExtractor struct { searcher VectorSearcher ask string }",
+          "after_start_line": 177,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "globalMemoryExtractor.searcher",
+          "new_signature": "searcher VectorSearcher",
+          "after_start_line": 178,
+          "dependents_count": 11
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "globalMemoryExtractor.ask",
+          "new_signature": "ask string",
+          "after_start_line": 179,
+          "dependents_count": 94
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "newGlobalMemoryExtractor",
+          "new_signature": "func newGlobalMemoryExtractor(s VectorSearcher, ask string) Extractor",
+          "after_start_line": 182,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "globalMemoryExtractor.Name",
+          "new_signature": "func (globalMemoryExtractor) Name() string",
+          "after_start_line": 186,
+          "dependents_count": 1500
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "globalMemoryExtractor.Extract",
+          "new_signature": "func (g globalMemoryExtractor) Extract(ctx context.Context, in Input) (Section, error)",
+          "after_start_line": 188,
+          "dependents_count": 53
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "describeHit",
+          "new_signature": "func describeHit(h PriorHit, currentRepo string) string",
+          "after_start_line": 227,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "queryTextFrom",
+          "new_signature": "func queryTextFrom(in Input) string",
+          "after_start_line": 234,
+          "dependents_count": 1
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/globalmemory_test.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "fakeSearcher",
+          "new_signature": "fakeSearcher struct { hits []PriorHit err error gotText string }",
+          "after_start_line": 17,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "fakeSearcher.hits",
+          "new_signature": "hits []PriorHit",
+          "after_start_line": 18,
+          "dependents_count": 39
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "fakeSearcher.err",
+          "new_signature": "err error",
+          "after_start_line": 19,
+          "dependents_count": 9009
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "fakeSearcher.gotText",
+          "new_signature": "gotText string",
+          "after_start_line": 20,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "fakeSearcher.Query",
+          "new_signature": "func (f *fakeSearcher) Query(_ context.Context, text string, _ int) ([]PriorHit, error)",
+          "after_start_line": 23,
+          "dependents_count": 91
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "intentInput",
+          "new_signature": "func intentInput() Input",
+          "after_start_line": 28,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestGlobalMemoryIsAbsentUnlessConfigured",
+          "new_signature": "func TestGlobalMemoryIsAbsentUnlessConfigured(t *testing.T)",
+          "after_start_line": 39,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestGlobalMemoryAppearsWhenSearcherPresent",
+          "new_signature": "func TestGlobalMemoryAppearsWhenSearcherPresent(t *testing.T)",
+          "after_start_line": 53,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestGlobalMemoryPreservesCitationsFromRetrieval",
+          "new_signature": "func TestGlobalMemoryPreservesCitationsFromRetrieval(t *testing.T)",
+          "after_start_line": 79,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestGlobalMemoryUsesIntentAsQueryByDefault",
+          "new_signature": "func TestGlobalMemoryUsesIntentAsQueryByDefault(t *testing.T)",
+          "after_start_line": 96,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestGlobalMemoryAskOverridesIntent",
+          "new_signature": "func TestGlobalMemoryAskOverridesIntent(t *testing.T)",
+          "after_start_line": 108,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestGlobalMemoryFailureIsANote",
+          "new_signature": "func TestGlobalMemoryFailureIsANote(t *testing.T)",
+          "after_start_line": 120,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestVectorSearcherPostsQueryTextAndBearer",
+          "new_signature": "func TestVectorSearcherPostsQueryTextAndBearer(t *testing.T)",
+          "after_start_line": 133,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestVectorSearcherDropsRowsWithoutProvenance",
+          "new_signature": "func TestVectorSearcherDropsRowsWithoutProvenance(t *testing.T)",
+          "after_start_line": 175,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestVectorConfigRequiresHTTPS",
+          "new_signature": "func TestVectorConfigRequiresHTTPS(t *testing.T)",
+          "after_start_line": 197,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/input.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Store",
+          "new_signature": "Store interface { List(ctx context.Context) ([]apicheckpoint.CheckpointInfo, error) Read(ctx context.Context, checkpointID id.CheckpointID) (*apicheckpoint.CheckpointSummary, error) ReadSessionContent(ctx context.Context, checkpointID id.CheckpointID, sessionIndex int) (*apicheckpoint.SessionContent, error) }",
+          "after_start_line": 16,
+          "dependents_count": 68
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Store.List",
+          "new_signature": "List(ctx context.Context) ([]apicheckpoint.CheckpointInfo, error)",
+          "after_start_line": 17,
+          "dependents_count": 142
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Store.Read",
+          "new_signature": "Read(ctx context.Context, checkpointID id.CheckpointID) (*apicheckpoint.CheckpointSummary, error)",
+          "after_start_line": 18,
+          "dependents_count": 276
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Store.ReadSessionContent",
+          "new_signature": "ReadSessionContent(ctx context.Context, checkpointID id.CheckpointID, sessionIndex int) (*apicheckpoint.SessionContent, error)",
+          "after_start_line": 19,
+          "dependents_count": 61
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "LoadOptions",
+          "new_signature": "LoadOptions struct { Repo string Head string Limit int // max checkpoints; \u003c= 0 means DefaultLimit Checkpoint string // start here instead of the newest Session string // only checkpoints from this session id Graph GraphRunner }",
+          "after_start_line": 23,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "LoadOptions.Repo",
+          "new_signature": "Repo string",
+          "after_start_line": 24,
+          "dependents_count": 380
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "LoadOptions.Head",
+          "new_signature": "Head string",
+          "after_start_line": 25,
+          "dependents_count": 137
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "LoadOptions.Limit",
+          "new_signature": "Limit int",
+          "after_start_line": 26,
+          "dependents_count": 66
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "LoadOptions.Checkpoint",
+          "new_signature": "Checkpoint string",
+          "after_start_line": 27,
+          "dependents_count": 423
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "LoadOptions.Session",
+          "new_signature": "Session string",
+          "after_start_line": 28,
+          "dependents_count": 346
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "LoadOptions.Graph",
+          "new_signature": "Graph GraphRunner",
+          "after_start_line": 29,
+          "dependents_count": 8
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "Load",
+          "new_signature": "func Load(ctx context.Context, store Store, opts LoadOptions) (Input, error)",
+          "after_start_line": 47,
+          "dependents_count": 285
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "loadCheckpoint",
+          "new_signature": "func loadCheckpoint(ctx context.Context, store Store, info apicheckpoint.CheckpointInfo) (Checkpoint, bool)",
+          "after_start_line": 105,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "skipUntil",
+          "new_signature": "func skipUntil(infos []apicheckpoint.CheckpointInfo, want string) []apicheckpoint.CheckpointInfo",
+          "after_start_line": 138,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "checkpointHasSession",
+          "new_signature": "func checkpointHasSession(info apicheckpoint.CheckpointInfo, want string) bool",
+          "after_start_line": 147,
+          "dependents_count": 1
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/input_test.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "fakeStore",
+          "new_signature": "fakeStore struct { infos []apicheckpoint.CheckpointInfo attempts int fail bool }",
+          "after_start_line": 13,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "fakeStore.infos",
+          "new_signature": "infos []apicheckpoint.CheckpointInfo",
+          "after_start_line": 14,
+          "dependents_count": 38
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "fakeStore.attempts",
+          "new_signature": "attempts int",
+          "after_start_line": 15,
+          "dependents_count": 18
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "fakeStore.fail",
+          "new_signature": "fail bool",
+          "after_start_line": 16,
+          "dependents_count": 294
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "fakeStore.List",
+          "new_signature": "func (f *fakeStore) List(context.Context) ([]apicheckpoint.CheckpointInfo, error)",
+          "after_start_line": 19,
+          "dependents_count": 142
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "fakeStore.Read",
+          "new_signature": "func (f *fakeStore) Read(context.Context, id.CheckpointID) (*apicheckpoint.CheckpointSummary, error)",
+          "after_start_line": 23,
+          "dependents_count": 276
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "fakeStore.ReadSessionContent",
+          "new_signature": "func (f *fakeStore) ReadSessionContent(_ context.Context, cpID id.CheckpointID, _ int) (*apicheckpoint.SessionContent, error)",
+          "after_start_line": 27,
+          "dependents_count": 61
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "manyInfos",
+          "new_signature": "func manyInfos(n int) []apicheckpoint.CheckpointInfo",
+          "after_start_line": 37,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestLoadBoundsAttemptsWhenNothingIsReadable",
+          "new_signature": "func TestLoadBoundsAttemptsWhenNothingIsReadable(t *testing.T)",
+          "after_start_line": 48,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestLoadStopsAtLimitWhenReadable",
+          "new_signature": "func TestLoadStopsAtLimitWhenReadable(t *testing.T)",
+          "after_start_line": 73,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestLoadHonoursCancelledContext",
+          "new_signature": "func TestLoadHonoursCancelledContext(t *testing.T)",
+          "after_start_line": 92,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestLoadOrdersNewestFirst",
+          "new_signature": "func TestLoadOrdersNewestFirst(t *testing.T)",
+          "after_start_line": 111,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/intent.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "intentExtractor",
+          "new_signature": "intentExtractor struct{}",
+          "after_start_line": 12,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "newIntentExtractor",
+          "new_signature": "func newIntentExtractor() Extractor",
+          "after_start_line": 14,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "intentExtractor.Name",
+          "new_signature": "func (intentExtractor) Name() string",
+          "after_start_line": 16,
+          "dependents_count": 1500
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "intentExtractor.Extract",
+          "new_signature": "func (intentExtractor) Extract(_ context.Context, in Input) (Section, error)",
+          "after_start_line": 23,
+          "dependents_count": 53
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "normalizeForDedupe",
+          "new_signature": "func normalizeForDedupe(s string) string",
+          "after_start_line": 51,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/openitems.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "openItemsExtractor",
+          "new_signature": "openItemsExtractor struct{}",
+          "after_start_line": 9,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "newOpenItemsExtractor",
+          "new_signature": "func newOpenItemsExtractor() Extractor",
+          "after_start_line": 11,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "openItemsExtractor.Name",
+          "new_signature": "func (openItemsExtractor) Name() string",
+          "after_start_line": 13,
+          "dependents_count": 1500
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "openItemsExtractor.Extract",
+          "new_signature": "func (openItemsExtractor) Extract(_ context.Context, in Input) (Section, error)",
+          "after_start_line": 25,
+          "dependents_count": 53
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "filesTouchedBefore",
+          "new_signature": "func filesTouchedBefore(cps []Checkpoint, i int) map[string]bool",
+          "after_start_line": 59,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "mentionsAny",
+          "new_signature": "func mentionsAny(text string, files map[string]bool) bool",
+          "after_start_line": 73,
+          "dependents_count": 1
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/packet.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Citation",
+          "new_signature": "Citation struct { CheckpointID string `json:\"checkpoint_id\"` SessionIndex int `json:\"session_index\"` Line int `json:\"line,omitempty\"` }",
+          "after_start_line": 19,
+          "dependents_count": 12
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Citation.CheckpointID",
+          "new_signature": "CheckpointID string",
+          "after_start_line": 20,
+          "dependents_count": 733
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Citation.SessionIndex",
+          "new_signature": "SessionIndex int",
+          "after_start_line": 21,
+          "dependents_count": 10
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Citation.Line",
+          "new_signature": "Line int",
+          "after_start_line": 22,
+          "dependents_count": 100
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Item",
+          "new_signature": "Item struct { Text string `json:\"text\"` Cites []Citation `json:\"cites\"` }",
+          "after_start_line": 25,
+          "dependents_count": 18
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Item.Text",
+          "new_signature": "Text string",
+          "after_start_line": 26,
+          "dependents_count": 221
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Item.Cites",
+          "new_signature": "Cites []Citation",
+          "after_start_line": 27,
+          "dependents_count": 17
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Section",
+          "new_signature": "Section struct { Name string `json:\"name\"` Items []Item `json:\"items\"` Note string `json:\"note,omitempty\"` }",
+          "after_start_line": 30,
+          "dependents_count": 36
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Section.Name",
+          "new_signature": "Name string",
+          "after_start_line": 31,
+          "dependents_count": 1500
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Section.Items",
+          "new_signature": "Items []Item",
+          "after_start_line": 32,
+          "dependents_count": 44
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Section.Note",
+          "new_signature": "Note string",
+          "after_start_line": 33,
+          "dependents_count": 106
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Packet",
+          "new_signature": "Packet struct { Repo string `json:\"repo\"` GeneratedAt time.Time `json:\"generated_at\"` Head string `json:\"head_checkpoint_id\"` Sections []Section `json:\"sections\"` }",
+          "after_start_line": 36,
+          "dependents_count": 14
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Packet.Repo",
+          "new_signature": "Repo string",
+          "after_start_line": 37,
+          "dependents_count": 380
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Packet.GeneratedAt",
+          "new_signature": "GeneratedAt time.Time",
+          "after_start_line": 38,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Packet.Head",
+          "new_signature": "Head string",
+          "after_start_line": 39,
+          "dependents_count": 137
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Packet.Sections",
+          "new_signature": "Sections []Section",
+          "after_start_line": 40,
+          "dependents_count": 40
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Checkpoint",
+          "new_signature": "Checkpoint struct { ID string SessionIndex int CreatedAt time.Time Metadata *apicheckpoint.Metadata Summary *apicheckpoint.Summary FilesTouched []string Transcript []byte CompactStart int HasCompactStart bool }",
+          "after_start_line": 43,
+          "dependents_count": 423
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Checkpoint.ID",
+          "new_signature": "ID string",
+          "after_start_line": 44,
+          "dependents_count": 1002
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Checkpoint.SessionIndex",
+          "new_signature": "SessionIndex int",
+          "after_start_line": 45,
+          "dependents_count": 10
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Checkpoint.CreatedAt",
+          "new_signature": "CreatedAt time.Time",
+          "after_start_line": 46,
+          "dependents_count": 222
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Checkpoint.Metadata",
+          "new_signature": "Metadata *apicheckpoint.Metadata",
+          "after_start_line": 47,
+          "dependents_count": 269
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Checkpoint.Summary",
+          "new_signature": "Summary *apicheckpoint.Summary",
+          "after_start_line": 48,
+          "dependents_count": 171
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Checkpoint.FilesTouched",
+          "new_signature": "FilesTouched []string",
+          "after_start_line": 49,
+          "dependents_count": 316
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Checkpoint.Transcript",
+          "new_signature": "Transcript []byte",
+          "after_start_line": 50,
+          "dependents_count": 294
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Checkpoint.CompactStart",
+          "new_signature": "CompactStart int",
+          "after_start_line": 51,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Checkpoint.HasCompactStart",
+          "new_signature": "HasCompactStart bool",
+          "after_start_line": 52,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "GraphRunner",
+          "new_signature": "GraphRunner interface { Run(ctx context.Context, args ...string) ([]byte, error) }",
+          "after_start_line": 55,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "GraphRunner.Run",
+          "new_signature": "Run(ctx context.Context, args ...string) ([]byte, error)",
+          "after_start_line": 56,
+          "dependents_count": 1172
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Input",
+          "new_signature": "Input struct { Repo string Head string Checkpoints []Checkpoint Graph GraphRunner Listed int Unreadable int Truncated bool }",
+          "after_start_line": 59,
+          "dependents_count": 135
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Input.Repo",
+          "new_signature": "Repo string",
+          "after_start_line": 60,
+          "dependents_count": 380
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Input.Head",
+          "new_signature": "Head string",
+          "after_start_line": 61,
+          "dependents_count": 137
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Input.Checkpoints",
+          "new_signature": "Checkpoints []Checkpoint",
+          "after_start_line": 62,
+          "dependents_count": 144
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Input.Graph",
+          "new_signature": "Graph GraphRunner",
+          "after_start_line": 63,
+          "dependents_count": 8
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Input.Listed",
+          "new_signature": "Listed int",
+          "after_start_line": 64,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Input.Unreadable",
+          "new_signature": "Unreadable int",
+          "after_start_line": 65,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Input.Truncated",
+          "new_signature": "Truncated bool",
+          "after_start_line": 66,
+          "dependents_count": 25
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Input.emptyRangeNote",
+          "new_signature": "func (in Input) emptyRangeNote() string",
+          "after_start_line": 69,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Extractor",
+          "new_signature": "Extractor interface { Name() string Extract(ctx context.Context, in Input) (Section, error) }",
+          "after_start_line": 83,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Extractor.Name",
+          "new_signature": "Name() string",
+          "after_start_line": 84,
+          "dependents_count": 1500
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Extractor.Extract",
+          "new_signature": "Extract(ctx context.Context, in Input) (Section, error)",
+          "after_start_line": 85,
+          "dependents_count": 53
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "cite",
+          "new_signature": "func cite(cp Checkpoint) []Citation",
+          "after_start_line": 90,
+          "dependents_count": 11
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "section",
+          "new_signature": "func section(name string, items []Item, emptyNote string) Section",
+          "after_start_line": 94,
+          "dependents_count": 91
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "emptyNoteFor",
+          "new_signature": "func emptyNoteFor(in Input, reason string) string",
+          "after_start_line": 101,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/packet_test.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "testInput",
+          "new_signature": "func testInput() Input",
+          "after_start_line": 14,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestEveryItemIsCited",
+          "new_signature": "func TestEveryItemIsCited(t *testing.T)",
+          "after_start_line": 51,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestNilSummaryDoesNotPanic",
+          "new_signature": "func TestNilSummaryDoesNotPanic(t *testing.T)",
+          "after_start_line": 76,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestEmptyInputStillProducesAPacket",
+          "new_signature": "func TestEmptyInputStillProducesAPacket(t *testing.T)",
+          "after_start_line": 109,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestEmptyRangeBlamesCheckpointsNotSummaries",
+          "new_signature": "func TestEmptyRangeBlamesCheckpointsNotSummaries(t *testing.T)",
+          "after_start_line": 126,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestNoGraphOmitsSurfaceSection",
+          "new_signature": "func TestNoGraphOmitsSurfaceSection(t *testing.T)",
+          "after_start_line": 156,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestIntentDedupesNearDuplicates",
+          "new_signature": "func TestIntentDedupesNearDuplicates(t *testing.T)",
+          "after_start_line": 167,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestOpenItemsMarksRatherThanDeletes",
+          "new_signature": "func TestOpenItemsMarksRatherThanDeletes(t *testing.T)",
+          "after_start_line": 182,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestRenderJSONNeverEmitsNullArrays",
+          "new_signature": "func TestRenderJSONNeverEmitsNullArrays(t *testing.T)",
+          "after_start_line": 217,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestUnreadableCheckpointsAreReportedNotSilent",
+          "new_signature": "func TestUnreadableCheckpointsAreReportedNotSilent(t *testing.T)",
+          "after_start_line": 238,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestTrulyEmptyRangeStillSaysNoCheckpoints",
+          "new_signature": "func TestTrulyEmptyRangeStillSaysNoCheckpoints(t *testing.T)",
+          "after_start_line": 254,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/render_json.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "RenderJSON",
+          "new_signature": "func RenderJSON(w io.Writer, p Packet) error",
+          "after_start_line": 19,
+          "dependents_count": 3
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/render_md.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "RenderMarkdown",
+          "new_signature": "func RenderMarkdown(w io.Writer, p Packet) error",
+          "after_start_line": 24,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "formatCites",
+          "new_signature": "func formatCites(cites []Citation) string",
+          "after_start_line": 66,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "shortID",
+          "new_signature": "func shortID(id string) string",
+          "after_start_line": 83,
+          "dependents_count": 5
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/stopped.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "stoppedExtractor",
+          "new_signature": "stoppedExtractor struct{}",
+          "after_start_line": 9,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "newStoppedExtractor",
+          "new_signature": "func newStoppedExtractor() Extractor",
+          "after_start_line": 11,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "stoppedExtractor.Name",
+          "new_signature": "func (stoppedExtractor) Name() string",
+          "after_start_line": 13,
+          "dependents_count": 1500
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "stoppedExtractor.Extract",
+          "new_signature": "func (stoppedExtractor) Extract(_ context.Context, in Input) (Section, error)",
+          "after_start_line": 22,
+          "dependents_count": 53
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "limit",
+          "new_signature": "func limit(xs []string, n int) []string",
+          "after_start_line": 65,
+          "dependents_count": 168
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/surface.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "graphEntity",
+          "new_signature": "graphEntity struct { Name string `json:\"name\"` Kind string `json:\"kind\"` File string `json:\"file\"` Path string `json:\"path\"` Change string `json:\"change\"` DependentsCount int `json:\"dependents_count\"` Degenerate bool `json:\"degenerate\"` DegenerateReason string `json:\"degenerate_reason\"` }",
+          "after_start_line": 18,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "graphEntity.Name",
+          "new_signature": "Name string",
+          "after_start_line": 19,
+          "dependents_count": 1500
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "graphEntity.Kind",
+          "new_signature": "Kind string",
+          "after_start_line": 20,
+          "dependents_count": 193
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "graphEntity.File",
+          "new_signature": "File string",
+          "after_start_line": 21,
+          "dependents_count": 315
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "graphEntity.Path",
+          "new_signature": "Path string",
+          "after_start_line": 22,
+          "dependents_count": 576
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "graphEntity.Change",
+          "new_signature": "Change string",
+          "after_start_line": 23,
+          "dependents_count": 34
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "graphEntity.DependentsCount",
+          "new_signature": "DependentsCount int",
+          "after_start_line": 24,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "graphEntity.Degenerate",
+          "new_signature": "Degenerate bool",
+          "after_start_line": 25,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "graphEntity.DegenerateReason",
+          "new_signature": "DegenerateReason string",
+          "after_start_line": 26,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "graphDiff",
+          "new_signature": "graphDiff struct { Entities []graphEntity `json:\"entities\"` Changes []graphEntity `json:\"changes\"` }",
+          "after_start_line": 29,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "graphDiff.Entities",
+          "new_signature": "Entities []graphEntity",
+          "after_start_line": 30,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "graphDiff.Changes",
+          "new_signature": "Changes []graphEntity",
+          "after_start_line": 31,
+          "dependents_count": 13
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "graphDiff.entities",
+          "new_signature": "func (d graphDiff) entities() []graphEntity",
+          "after_start_line": 34,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "execGraphRunner",
+          "new_signature": "execGraphRunner struct{}",
+          "after_start_line": 41,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "execGraphRunner.Run",
+          "new_signature": "func (execGraphRunner) Run(ctx context.Context, args ...string) ([]byte, error)",
+          "after_start_line": 43,
+          "dependents_count": 1172
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "surfaceExtractor",
+          "new_signature": "surfaceExtractor struct{}",
+          "after_start_line": 54,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "newSurfaceExtractor",
+          "new_signature": "func newSurfaceExtractor() Extractor",
+          "after_start_line": 56,
+          "dependents_count": 8
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "surfaceExtractor.Name",
+          "new_signature": "func (surfaceExtractor) Name() string",
+          "after_start_line": 58,
+          "dependents_count": 1500
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "surfaceExtractor.Extract",
+          "new_signature": "func (surfaceExtractor) Extract(ctx context.Context, in Input) (Section, error)",
+          "after_start_line": 60,
+          "dependents_count": 53
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "describeEntity",
+          "new_signature": "func describeEntity(e graphEntity) string",
+          "after_start_line": 128,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "fallbackSurface",
+          "new_signature": "func fallbackSurface(in Input, reason string) Section",
+          "after_start_line": 142,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "appendNote",
+          "new_signature": "func appendNote(existing, add string) string",
+          "after_start_line": 173,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "firstNonEmpty",
+          "new_signature": "func firstNonEmpty(vals ...string) string",
+          "after_start_line": 180,
+          "dependents_count": 1
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/surface_test.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "fakeGraph",
+          "new_signature": "fakeGraph struct { out []byte err error }",
+          "after_start_line": 14,
+          "dependents_count": 8
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "fakeGraph.out",
+          "new_signature": "out []byte",
+          "after_start_line": 15,
+          "dependents_count": 1453
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "fakeGraph.err",
+          "new_signature": "err error",
+          "after_start_line": 16,
+          "dependents_count": 9009
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "fakeGraph.Run",
+          "new_signature": "func (f fakeGraph) Run(context.Context, ...string) ([]byte, error)",
+          "after_start_line": 19,
+          "dependents_count": 1172
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "surfaceInput",
+          "new_signature": "func surfaceInput(g GraphRunner, files ...string) Input",
+          "after_start_line": 21,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestSurfaceRanksByDependents",
+          "new_signature": "func TestSurfaceRanksByDependents(t *testing.T)",
+          "after_start_line": 33,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestSurfaceSuppressesDegenerateEntities",
+          "new_signature": "func TestSurfaceSuppressesDegenerateEntities(t *testing.T)",
+          "after_start_line": 55,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestSurfaceFallsBackToTouchedFiles",
+          "new_signature": "func TestSurfaceFallsBackToTouchedFiles(t *testing.T)",
+          "after_start_line": 76,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestSurfaceGraphFailureIsANoteNotAnError",
+          "new_signature": "func TestSurfaceGraphFailureIsANoteNotAnError(t *testing.T)",
+          "after_start_line": 95,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestSurfaceMalformedJSONIsANote",
+          "new_signature": "func TestSurfaceMalformedJSONIsANote(t *testing.T)",
+          "after_start_line": 111,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestSurfaceAcceptsChangesKey",
+          "new_signature": "func TestSurfaceAcceptsChangesKey(t *testing.T)",
+          "after_start_line": 124,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestSurfaceItemsAreCited",
+          "new_signature": "func TestSurfaceItemsAreCited(t *testing.T)",
+          "after_start_line": 137,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/testdata/sample_packet.json",
+      "status": "A",
+      "language": "JSON",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "repo",
+          "new_signature": "json key repo",
+          "after_start_line": 2,
+          "dependents_count": 2673
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "generated_at",
+          "new_signature": "json key generated_at",
+          "after_start_line": 3,
+          "dependents_count": 9
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "head_checkpoint_id",
+          "new_signature": "json key head_checkpoint_id",
+          "after_start_line": 4,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "sections",
+          "new_signature": "json key sections",
+          "after_start_line": 5,
+          "dependents_count": 26
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "name",
+          "new_signature": "json key name",
+          "after_start_line": 7,
+          "dependents_count": 2442
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "items",
+          "new_signature": "json key items",
+          "after_start_line": 8,
+          "dependents_count": 120
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "cites",
+          "new_signature": "json key cites",
+          "after_start_line": 10,
+          "dependents_count": 12
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/transcript.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "toolCall",
+          "new_signature": "toolCall struct { Line int Name string Input map[string]any Status string Output string Followup string }",
+          "after_start_line": 14,
+          "dependents_count": 10
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "toolCall.Line",
+          "new_signature": "Line int",
+          "after_start_line": 15,
+          "dependents_count": 100
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "toolCall.Name",
+          "new_signature": "Name string",
+          "after_start_line": 16,
+          "dependents_count": 1500
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "toolCall.Input",
+          "new_signature": "Input map[string]any",
+          "after_start_line": 17,
+          "dependents_count": 135
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "toolCall.Status",
+          "new_signature": "Status string",
+          "after_start_line": 18,
+          "dependents_count": 407
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "toolCall.Output",
+          "new_signature": "Output string",
+          "after_start_line": 19,
+          "dependents_count": 266
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "toolCall.Followup",
+          "new_signature": "Followup string",
+          "after_start_line": 20,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "transcriptLine",
+          "new_signature": "transcriptLine struct { Type string `json:\"type\"` ID string `json:\"id\"` Content json.RawMessage `json:\"content\"` }",
+          "after_start_line": 23,
+          "dependents_count": 16
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "transcriptLine.Type",
+          "new_signature": "Type string",
+          "after_start_line": 24,
+          "dependents_count": 809
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "transcriptLine.ID",
+          "new_signature": "ID string",
+          "after_start_line": 25,
+          "dependents_count": 1002
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "transcriptLine.Content",
+          "new_signature": "Content json.RawMessage",
+          "after_start_line": 26,
+          "dependents_count": 524
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "contentBlock",
+          "new_signature": "contentBlock struct { Type string `json:\"type\"` Text string `json:\"text\"` Name string `json:\"name\"` Input map[string]any `json:\"input\"` Result json.RawMessage `json:\"result\"` }",
+          "after_start_line": 29,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "contentBlock.Type",
+          "new_signature": "Type string",
+          "after_start_line": 30,
+          "dependents_count": 809
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "contentBlock.Text",
+          "new_signature": "Text string",
+          "after_start_line": 31,
+          "dependents_count": 221
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "contentBlock.Name",
+          "new_signature": "Name string",
+          "after_start_line": 32,
+          "dependents_count": 1500
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "contentBlock.Input",
+          "new_signature": "Input map[string]any",
+          "after_start_line": 33,
+          "dependents_count": 135
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "contentBlock.Result",
+          "new_signature": "Result json.RawMessage",
+          "after_start_line": 34,
+          "dependents_count": 206
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "toolResult",
+          "new_signature": "toolResult struct { Output string `json:\"output\"` Status string `json:\"status\"` }",
+          "after_start_line": 37,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "toolResult.Output",
+          "new_signature": "Output string",
+          "after_start_line": 38,
+          "dependents_count": 266
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "toolResult.Status",
+          "new_signature": "Status string",
+          "after_start_line": 39,
+          "dependents_count": 407
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "scanToolCalls",
+          "new_signature": "func scanToolCalls(transcript []byte, from int) []toolCall",
+          "after_start_line": 42,
+          "dependents_count": 9
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "dedupeKey",
+          "new_signature": "func dedupeKey(id string, blockIndex int) string",
+          "after_start_line": 103,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "itoa",
+          "new_signature": "func itoa(n int) string",
+          "after_start_line": 110,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "trailingText",
+          "new_signature": "func trailingText(blocks []contentBlock) string",
+          "after_start_line": 132,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "groupKey",
+          "new_signature": "func groupKey(c toolCall) string",
+          "after_start_line": 143,
+          "dependents_count": 3
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/handoff/transcript_realdata_test.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "realCompactOutput",
+          "new_signature": "func realCompactOutput(t *testing.T) []byte",
+          "after_start_line": 15,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestScanToolCallsAgainstRealCompactOutput",
+          "new_signature": "func TestScanToolCallsAgainstRealCompactOutput(t *testing.T)",
+          "after_start_line": 24,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestGroupKeyResolvesRealBashCommands",
+          "new_signature": "func TestGroupKeyResolvesRealBashCommands(t *testing.T)",
+          "after_start_line": 44,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestDeadEndsEndToEndOnRealCompactOutput",
+          "new_signature": "func TestDeadEndsEndToEndOnRealCompactOutput(t *testing.T)",
+          "after_start_line": 66,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestRealCompactOutputExcludesSuccesses",
+          "new_signature": "func TestRealCompactOutputExcludesSuccesses(t *testing.T)",
+          "after_start_line": 100,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/root.go",
+      "status": "M",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "NewRootCmd",
+          "before_start_line": 82,
+          "after_start_line": 82,
+          "dependents_count": 102
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/root_test.go",
+      "status": "M",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "TestRoot_VisibleCommandsAreGrouped",
+          "before_start_line": 267,
+          "after_start_line": 267,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/setup.go",
+      "status": "M",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "signature_changed",
+          "kind": "type",
+          "name": "EnableOptions",
+          "old_signature": "EnableOptions struct { UseLocalSettings bool UseProjectSettings bool ForceHooks bool SkipPushSessions bool CheckpointRemote string // CheckpointBackend selects the persistent checkpoint storage backend // (\"branch\"/\"refs\" or the canonical \"git-branch\"/\"git-refs\"). Empty leaves // the current/default (git-branch) backend in place. CheckpointBackend string Telemetry bool AbsoluteGitHookPath bool // SuppressDoneMessage tells `runEnableInteractive` to skip its final // \"Ready.\" line and the \"commit the configuration files\" hint. Set // when the caller is running the bootstrap flow, which takes over // presentation of the final state (commit, push, done). SuppressDoneMessage bool Yes bool // ImportHistory opts into importing the selected agents' pre-existing // session history during first-time setup. Deliberately NOT implied by // Yes: ingesting a month of local transcripts is not a setup default (see // maybeOfferSessionImport). ImportHistory bool SearchSkill bool AgentHelpSkill bool }",
+          "new_signature": "EnableOptions struct { UseLocalSettings bool UseProjectSettings bool ForceHooks bool SkipPushSessions bool CheckpointRemote string // CheckpointBackend selects the persistent checkpoint storage backend // (\"branch\"/\"refs\" or the canonical \"git-branch\"/\"git-refs\"). Empty leaves // the current/default (git-branch) backend in place. CheckpointBackend string Telemetry bool AbsoluteGitHookPath bool // SuppressDoneMessage tells `runEnableInteractive` to skip its final // \"Ready.\" line and the \"commit the configuration files\" hint. Set // when the caller is running the bootstrap flow, which takes over // presentation of the final state (commit, push, done). SuppressDoneMessage bool Yes bool // ImportHistory opts into importing the selected agents' pre-existing // session history during first-time setup. Deliberately NOT implied by // Yes: ingesting a month of local transcripts is not a setup default (see // maybeOfferSessionImport). ImportHistory bool SearchSkill bool AgentHelpSkill bool HandoffSkill bool }",
+          "before_start_line": 70,
+          "after_start_line": 71,
+          "dependents_count": 66
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "EnableOptions.HandoffSkill",
+          "new_signature": "HandoffSkill bool",
+          "after_start_line": 96,
+          "dependents_count": 4
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "enableUsesSetupFlow",
+          "before_start_line": 155,
+          "after_start_line": 157,
+          "dependents_count": 2
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "enableNeedsAgentManagement",
+          "before_start_line": 162,
+          "after_start_line": 164,
+          "dependents_count": 1
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "applyAgentChanges",
+          "before_start_line": 581,
+          "after_start_line": 583,
+          "dependents_count": 1
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "newEnableCmd",
+          "before_start_line": 806,
+          "after_start_line": 811,
+          "dependents_count": 19
+        }
+      ]
+    },
+    {
+      "path": "cmd/entire/cli/setup_handoff_skill.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "setupOptionalHandoffSkill",
+          "new_signature": "func setupOptionalHandoffSkill(ctx context.Context, w io.Writer, ag agent.Agent, opts EnableOptions) error",
+          "after_start_line": 17,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "reportHandoffSkillScaffold",
+          "new_signature": "func reportHandoffSkillScaffold(w io.Writer, ag agent.Agent, result managedScaffoldResult)",
+          "after_start_line": 29,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "setupOptionalHandoffSkillForNames",
+          "new_signature": "func setupOptionalHandoffSkillForNames(ctx context.Context, w io.Writer, names []string, opts EnableOptions) error",
+          "after_start_line": 48,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "scaffoldHandoffSkill",
+          "new_signature": "func scaffoldHandoffSkill(ctx context.Context, ag agent.Agent) (managedScaffoldResult, error)",
+          "after_start_line": 52,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "isManagedHandoffSkill",
+          "new_signature": "func isManagedHandoffSkill(data []byte) bool",
+          "after_start_line": 72,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "handoffSkillTemplate",
+          "new_signature": "func handoffSkillTemplate(agentName types.AgentName) (string, []byte, bool)",
+          "after_start_line": 78,
+          "dependents_count": 1
+        }
+      ]
+    },
+    {
+      "path": "cmd/handoff-databricks/main.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "main",
+          "new_signature": "func main()",
+          "after_start_line": 13,
+          "dependents_count": 561
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "run",
+          "new_signature": "func run(ctx context.Context, in string, dryRun bool, stdout, stderr io.Writer) error",
+          "after_start_line": 24,
+          "dependents_count": 805
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "readInput",
+          "new_signature": "func readInput(in string) ([]byte, error)",
+          "after_start_line": 72,
+          "dependents_count": 1
+        }
+      ]
+    },
+    {
+      "path": "cmd/handoff-databricks/rows.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Citation",
+          "new_signature": "Citation struct { CheckpointID string `json:\"checkpoint_id\"` SessionIndex int `json:\"session_index\"` Line int `json:\"line,omitempty\"` }",
+          "after_start_line": 10,
+          "dependents_count": 12
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Citation.CheckpointID",
+          "new_signature": "CheckpointID string",
+          "after_start_line": 11,
+          "dependents_count": 733
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Citation.SessionIndex",
+          "new_signature": "SessionIndex int",
+          "after_start_line": 12,
+          "dependents_count": 10
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Citation.Line",
+          "new_signature": "Line int",
+          "after_start_line": 13,
+          "dependents_count": 100
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Item",
+          "new_signature": "Item struct { Text string `json:\"text\"` Cites []Citation `json:\"cites\"` }",
+          "after_start_line": 16,
+          "dependents_count": 18
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Item.Text",
+          "new_signature": "Text string",
+          "after_start_line": 17,
+          "dependents_count": 221
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Item.Cites",
+          "new_signature": "Cites []Citation",
+          "after_start_line": 18,
+          "dependents_count": 17
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Section",
+          "new_signature": "Section struct { Name string `json:\"name\"` Items []Item `json:\"items\"` Note string `json:\"note,omitempty\"` }",
+          "after_start_line": 21,
+          "dependents_count": 36
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Section.Name",
+          "new_signature": "Name string",
+          "after_start_line": 22,
+          "dependents_count": 1500
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Section.Items",
+          "new_signature": "Items []Item",
+          "after_start_line": 23,
+          "dependents_count": 44
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Section.Note",
+          "new_signature": "Note string",
+          "after_start_line": 24,
+          "dependents_count": 106
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Packet",
+          "new_signature": "Packet struct { Repo string `json:\"repo\"` GeneratedAt time.Time `json:\"generated_at\"` Head string `json:\"head_checkpoint_id\"` Sections []Section `json:\"sections\"` }",
+          "after_start_line": 27,
+          "dependents_count": 14
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Packet.Repo",
+          "new_signature": "Repo string",
+          "after_start_line": 28,
+          "dependents_count": 380
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Packet.GeneratedAt",
+          "new_signature": "GeneratedAt time.Time",
+          "after_start_line": 29,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Packet.Head",
+          "new_signature": "Head string",
+          "after_start_line": 30,
+          "dependents_count": 137
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Packet.Sections",
+          "new_signature": "Sections []Section",
+          "after_start_line": 31,
+          "dependents_count": 40
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Row",
+          "new_signature": "Row struct { RepoKey string `json:\"repo_key\"` CheckpointID string `json:\"checkpoint_id\"` SessionID int `json:\"session_id\"` HeadID string `json:\"head_checkpoint_id\"` GeneratedAt time.Time `json:\"generated_at\"` SectionName string `json:\"section_name\"` ItemIndex int `json:\"item_index\"` ItemText string `json:\"item_text\"` CiteLine int `json:\"cite_line\"` SectionNote string `json:\"section_note\"` IngestedAt time.Time `json:\"ingested_at\"` }",
+          "after_start_line": 34,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Row.RepoKey",
+          "new_signature": "RepoKey string",
+          "after_start_line": 35,
+          "dependents_count": 20
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Row.CheckpointID",
+          "new_signature": "CheckpointID string",
+          "after_start_line": 36,
+          "dependents_count": 733
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Row.SessionID",
+          "new_signature": "SessionID int",
+          "after_start_line": 37,
+          "dependents_count": 1192
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Row.HeadID",
+          "new_signature": "HeadID string",
+          "after_start_line": 38,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Row.GeneratedAt",
+          "new_signature": "GeneratedAt time.Time",
+          "after_start_line": 39,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Row.SectionName",
+          "new_signature": "SectionName string",
+          "after_start_line": 40,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Row.ItemIndex",
+          "new_signature": "ItemIndex int",
+          "after_start_line": 41,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Row.ItemText",
+          "new_signature": "ItemText string",
+          "after_start_line": 42,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Row.CiteLine",
+          "new_signature": "CiteLine int",
+          "after_start_line": 43,
+          "dependents_count": 9
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Row.SectionNote",
+          "new_signature": "SectionNote string",
+          "after_start_line": 44,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Row.IngestedAt",
+          "new_signature": "IngestedAt time.Time",
+          "after_start_line": 45,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "Flatten",
+          "new_signature": "func Flatten(p Packet, ingestedAt time.Time) []Row",
+          "after_start_line": 48,
+          "dependents_count": 10
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "EncodeNDJSON",
+          "new_signature": "func EncodeNDJSON(rows []Row) ([]byte, error)",
+          "after_start_line": 93,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "cmd/handoff-databricks/testdata/packet.json",
+      "status": "A",
+      "language": "JSON",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "repo",
+          "new_signature": "json key repo",
+          "after_start_line": 2,
+          "dependents_count": 2673
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "generated_at",
+          "new_signature": "json key generated_at",
+          "after_start_line": 3,
+          "dependents_count": 9
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "head_checkpoint_id",
+          "new_signature": "json key head_checkpoint_id",
+          "after_start_line": 4,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "sections",
+          "new_signature": "json key sections",
+          "after_start_line": 5,
+          "dependents_count": 26
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "name",
+          "new_signature": "json key name",
+          "after_start_line": 7,
+          "dependents_count": 2442
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "items",
+          "new_signature": "json key items",
+          "after_start_line": 8,
+          "dependents_count": 120
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "cites",
+          "new_signature": "json key cites",
+          "after_start_line": 10,
+          "dependents_count": 12
+        }
+      ]
+    },
+    {
+      "path": "cmd/handoff-databricks/upload.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Config",
+          "new_signature": "Config struct { Host string Token string WarehouseID string VolumePath string Table string }",
+          "after_start_line": 26,
+          "dependents_count": 175
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Config.Host",
+          "new_signature": "Host string",
+          "after_start_line": 27,
+          "dependents_count": 104
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Config.Token",
+          "new_signature": "Token string",
+          "after_start_line": 28,
+          "dependents_count": 79
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Config.WarehouseID",
+          "new_signature": "WarehouseID string",
+          "after_start_line": 29,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Config.VolumePath",
+          "new_signature": "VolumePath string",
+          "after_start_line": 30,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Config.Table",
+          "new_signature": "Table string",
+          "after_start_line": 31,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "ConfigFromEnv",
+          "new_signature": "func ConfigFromEnv() (Config, error)",
+          "after_start_line": 34,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Config.IsLocal",
+          "new_signature": "func (c Config) IsLocal() bool",
+          "after_start_line": 60,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Config.LocalDir",
+          "new_signature": "func (c Config) LocalDir() string",
+          "after_start_line": 62,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Uploader",
+          "new_signature": "Uploader struct { cfg Config client *http.Client }",
+          "after_start_line": 64,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Uploader.cfg",
+          "new_signature": "cfg Config",
+          "after_start_line": 65,
+          "dependents_count": 366
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Uploader.client",
+          "new_signature": "client *http.Client",
+          "after_start_line": 66,
+          "dependents_count": 318
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "NewUploader",
+          "new_signature": "func NewUploader(cfg Config) *Uploader",
+          "after_start_line": 69,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "objectName",
+          "new_signature": "func objectName(p Packet, now time.Time) string",
+          "after_start_line": 73,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "sanitizeSegment",
+          "new_signature": "func sanitizeSegment(s string) string",
+          "after_start_line": 81,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Uploader.Upload",
+          "new_signature": "func (u *Uploader) Upload(ctx context.Context, p Packet, payload []byte, now time.Time) (string, error)",
+          "after_start_line": 98,
+          "dependents_count": 16
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Uploader.CopyInto",
+          "new_signature": "func (u *Uploader) CopyInto(ctx context.Context, remotePath string) error",
+          "after_start_line": 137,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Uploader.endpoint",
+          "new_signature": "func (u *Uploader) endpoint(p string) (string, error)",
+          "after_start_line": 179,
+          "dependents_count": 28
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "ensureLeadingSlash",
+          "new_signature": "func ensureLeadingSlash(p string) string",
+          "after_start_line": 190,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "readSnippet",
+          "new_signature": "func readSnippet(r io.Reader) string",
+          "after_start_line": 197,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "cmd/handoff-databricks/upload_test.go",
+      "status": "A",
+      "language": "Go",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "samplePacket",
+          "new_signature": "func samplePacket(t *testing.T) Packet",
+          "after_start_line": 16,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestFlattenProducesARowPerCitation",
+          "new_signature": "func TestFlattenProducesARowPerCitation(t *testing.T)",
+          "after_start_line": 29,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestFlattenKeepsEmptySectionsWithTheirNote",
+          "new_signature": "func TestFlattenKeepsEmptySectionsWithTheirNote(t *testing.T)",
+          "after_start_line": 56,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestFlattenFallsBackWhenRepoMissing",
+          "new_signature": "func TestFlattenFallsBackWhenRepoMissing(t *testing.T)",
+          "after_start_line": 74,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestEncodeNDJSONIsOneObjectPerLine",
+          "new_signature": "func TestEncodeNDJSONIsOneObjectPerLine(t *testing.T)",
+          "after_start_line": 83,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestUploadWritesLocallyWhenHostIsFileScheme",
+          "new_signature": "func TestUploadWritesLocallyWhenHostIsFileScheme(t *testing.T)",
+          "after_start_line": 103,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestUploadPutsToFilesAPIWithBearer",
+          "new_signature": "func TestUploadPutsToFilesAPIWithBearer(t *testing.T)",
+          "after_start_line": 121,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestCopyIntoStatementCarriesNoPacketText",
+          "new_signature": "func TestCopyIntoStatementCarriesNoPacketText(t *testing.T)",
+          "after_start_line": 162,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestUploadRejectsPlainHTTPHost",
+          "new_signature": "func TestUploadRejectsPlainHTTPHost(t *testing.T)",
+          "after_start_line": 199,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestUploadSurfacesServerError",
+          "new_signature": "func TestUploadSurfacesServerError(t *testing.T)",
+          "after_start_line": 208,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "TestSanitizeSegmentStripsPathTraversal",
+          "new_signature": "func TestSanitizeSegmentStripsPathTraversal(t *testing.T)",
+          "after_start_line": 226,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "readAll",
+          "new_signature": "func readAll(r *http.Request) ([]byte, error)",
+          "after_start_line": 237,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "databricks/ddl.sql",
+      "status": "A",
+      "language": "SQL",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "table",
+          "name": "main.default",
+          "new_signature": "CREATE TABLE IF NOT EXISTS main.default.handoff_packets ( repo_key STRING NOT NULL COMMENT 'Packet repo field; may be local/\u003cbasename\u003e and is NOT unique on its own', checkpoint_id STRING COMMENT 'Cited checkpoint; empty for item_index = -1 rows', session_id INT COMMENT 'Session index within the checkpoint', head_checkpoint_id STRING COMMENT 'HEAD Entire-Checkpoint trailer at generation time', generated_at TIMESTAMP COMMENT 'When the packet was produced', section_name STRING NOT NULL COMMENT 'intent | open_items | dead_ends | surface | stopped', item_index INT NOT NULL COMMENT '-1 when the section was empty', item_text STRING COMMENT 'The cited line', cite_line INT COMMENT 'transcript.jsonl offset; dead_ends only', section_note STRING COMMENT 'Degradation reason when the section is empty', ingested_at TIMESTAMP COMMENT 'Ingest time, set by the uploader' ) USING DELTA PARTITIONED BY (repo_key)",
+          "after_start_line": 17,
+          "dependents_count": 1188
+        },
+        {
+          "type": "added",
+          "kind": "view",
+          "name": "main.default",
+          "new_signature": "CREATE OR REPLACE VIEW main.default.handoff_retrievable AS SELECT repo_key, checkpoint_id, session_id, cite_line, section_name, item_text, generated_at FROM main.default.handoff_packets WHERE section_name IN ('dead_ends', 'intent') AND item_index \u003e= 0 AND item_text IS NOT NULL",
+          "after_start_line": 37,
+          "dependents_count": 1188
+        }
+      ]
+    },
+    {
+      "path": "docs-private/STATUS_AND_DIVERGENCES.md",
+      "status": "A",
+      "language": "Markdown",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Status:-what-was-built-what-was-skipped-where-we-diverged",
+          "new_signature": "markdown heading Status: what was built, what was skipped, where we diverged",
+          "after_start_line": 1,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "1.-What-exists",
+          "new_signature": "markdown heading 1. What exists",
+          "after_start_line": 9,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "2.-Plan-step-outcome",
+          "new_signature": "markdown heading 2. Plan step → outcome",
+          "after_start_line": 39,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "3.-Divergences-with-reasons",
+          "new_signature": "markdown heading 3. Divergences, with reasons",
+          "after_start_line": 58,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "3.1-Go/no-go-was-answered-from-committed-fixtures-not-a-live-session",
+          "new_signature": "markdown heading 3.1 Go/no-go was answered from committed fixtures, not a live session",
+          "after_start_line": 60,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "3.2-graph-diff-not-graph-impact",
+          "new_signature": "markdown heading 3.2 `graph diff`, not `graph impact`",
+          "after_start_line": 72,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "3.3-Three-factual-errors-in-the-source-documents",
+          "new_signature": "markdown heading 3.3 Three factual errors in the source documents",
+          "after_start_line": 81,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "3.4-The-frozen-contract-grew-three-fields",
+          "new_signature": "markdown heading 3.4 The frozen contract grew three fields",
+          "after_start_line": 94,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "3.5-Databricks-was-un-cut-then-only-partly-built",
+          "new_signature": "markdown heading 3.5 Databricks was un-cut, then only partly built",
+          "after_start_line": 102,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "3.6-Built-solo-not-by-three-people",
+          "new_signature": "markdown heading 3.6 Built solo, not by three people",
+          "after_start_line": 118,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "4.-Two-bugs-found-by-running-it-for-real",
+          "new_signature": "markdown heading 4. Two bugs found by running it for real",
+          "after_start_line": 128,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "5.-Open-in-priority-order",
+          "new_signature": "markdown heading 5. Open, in priority order",
+          "after_start_line": 144,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "5a.-A-correction-worth-recording",
+          "new_signature": "markdown heading 5a. A correction worth recording",
+          "after_start_line": 170,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "6.-Honest-positioning",
+          "new_signature": "markdown heading 6. Honest positioning",
+          "after_start_line": 183,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "docs/architecture/handoff.md",
+      "status": "A",
+      "language": "Markdown",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "entire-handoff-architecture-and-high-level-design",
+          "new_signature": "markdown heading `entire handoff` — architecture and high-level design",
+          "after_start_line": 1,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "What-we-are-building-in-plain-terms",
+          "new_signature": "markdown heading What we are building, in plain terms",
+          "after_start_line": 13,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "System-flow",
+          "new_signature": "markdown heading System flow",
+          "after_start_line": 45,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_1_mermaid",
+          "new_signature": "markdown code fence mermaid",
+          "after_start_line": 50,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_2_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 100,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "The-seam-that-made-three-people-possible",
+          "new_signature": "markdown heading The seam that made three people possible",
+          "after_start_line": 104,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_3_mermaid",
+          "new_signature": "markdown code fence mermaid",
+          "after_start_line": 110,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_4_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 123,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "What-we-added-what-was-already-there",
+          "new_signature": "markdown heading What we added, what was already there",
+          "after_start_line": 141,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Files-added-in-full",
+          "new_signature": "markdown heading Files added, in full",
+          "after_start_line": 163,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_5_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 165,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_6_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 189,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "How-to-use-it",
+          "new_signature": "markdown heading How to use it",
+          "after_start_line": 193,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "1.-Read-a-briefing",
+          "new_signature": "markdown heading 1. Read a briefing",
+          "after_start_line": 195,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_7_bash",
+          "new_signature": "markdown code fence bash",
+          "after_start_line": 199,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_8_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 203,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "2.-Get-the-machine-readable-packet",
+          "new_signature": "markdown heading 2. Get the machine-readable packet",
+          "after_start_line": 205,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_9_bash",
+          "new_signature": "markdown code fence bash",
+          "after_start_line": 209,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_10_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 212,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "3.-Let-a-fresh-agent-bootstrap-itself",
+          "new_signature": "markdown heading 3. Let a fresh agent bootstrap itself",
+          "after_start_line": 214,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_11_bash",
+          "new_signature": "markdown code fence bash",
+          "after_start_line": 219,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_12_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 221,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "4.-Send-briefings-to-the-warehouse",
+          "new_signature": "markdown heading 4. Send briefings to the warehouse",
+          "after_start_line": 223,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_13_bash",
+          "new_signature": "markdown code fence bash",
+          "after_start_line": 228,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Local-dry-run-no-workspace-no-token-no-network",
+          "new_signature": "markdown heading Local dry run — no workspace, no token, no network",
+          "after_start_line": 229,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Real-workspace",
+          "new_signature": "markdown heading Real workspace",
+          "after_start_line": 232,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_14_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 238,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Reading-the-output",
+          "new_signature": "markdown heading Reading the output",
+          "after_start_line": 242,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_15_bash",
+          "new_signature": "markdown code fence bash",
+          "after_start_line": 247,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_16_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 249,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Data-contract",
+          "new_signature": "markdown heading Data contract",
+          "after_start_line": 256,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_17_json",
+          "new_signature": "markdown code fence json",
+          "after_start_line": 262,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_18_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 282,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Warehouse-schema",
+          "new_signature": "markdown heading Warehouse schema",
+          "after_start_line": 288,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Not-built",
+          "new_signature": "markdown heading Not built",
+          "after_start_line": 302,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Known-limits",
+          "new_signature": "markdown heading Known limits",
+          "after_start_line": 323,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Verification",
+          "new_signature": "markdown heading Verification",
+          "after_start_line": 351,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_19_bash",
+          "new_signature": "markdown code fence bash",
+          "after_start_line": 353,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "code_fence",
+          "name": "code_fence_20_text",
+          "new_signature": "markdown code fence text",
+          "after_start_line": 359,
+          "dependents_count": 0
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "W_UNSUPPORTED_FILE",
+      "severity": "info",
+      "file_path": "cmd/entire/cli/handoff/testdata/transcript.jsonl",
+      "effect_on_semantic_completeness": "file skipped; no parser for this file type, so its changes are not analyzed",
+      "detail": "head version has no supported parser"
+    },
+    {
+      "code": "E_PARSE_ERROR",
+      "severity": "warning",
+      "file_path": "databricks/ddl.sql",
+      "effect_on_semantic_completeness": "file parsed with syntax errors on one side; diff kept but may be incomplete or contain phantom changes",
+      "detail": "tree-sitter syntax error nodes present: error ERROR at line 14 column 1 near \"CREATE VOLUME IF NOT EXISTS main.default.handoff\\n  COMMENT 'Landing zone for han...\"; error ERROR at line 17 column 40 near \".handoff_packets\"; error ERROR at line 32 column 1 near \"COMMENT 'Handoff packets, one row per (section, item, citation).'\"; error ERROR at line 37 column 36 near \".handoff_retrievable\"; error ERROR at line 46 column 18 near \".\""
+    },
+    {
+      "code": "W_UNSUPPORTED_FILE",
+      "severity": "info",
+      "file_path": "handoff-databricks",
+      "effect_on_semantic_completeness": "file skipped; no parser for this file type, so its changes are not analyzed",
+      "detail": "head version has no supported parser"
+    },
+    {
+      "code": "E_PARSE_ERROR",
+      "severity": "warning",
+      "file_path": "databricks/ddl.sql",
+      "effect_on_semantic_completeness": "dependent references in this file may be undercounted because it failed to parse cleanly",
+      "detail": "tree-sitter syntax error nodes present: error ERROR at line 14 column 1 near \"CREATE VOLUME IF NOT EXISTS main.default.handoff\\n  COMMENT 'Landing zone for han...\"; error ERROR at line 17 column 40 near \".handoff_packets\"; error ERROR at line 32 column 1 near \"COMMENT 'Handoff packets, one row per (section, item, citation).'\"; error ERROR at line 37 column 36 near \".handoff_retrievable\"; error ERROR at line 46 column 18 near \".\""
+    }
+  ]
+}
