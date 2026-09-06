@@ -1,0 +1,43 @@
+{
+  "cli_version": "0.0.0-20260906090220-3a4fec28b630+dirty",
+  "checkpoint_id": "01M1TZVMK1JBYMC0VFNTS79F7F",
+  "session_id": "d4004a53-f089-4b14-86f8-f83169e166f7",
+  "strategy": "manual-commit",
+  "created_at": "2026-09-06T09:12:51.615755784Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "BUILDATHON.md",
+    "DEMO.md",
+    "cmd/entire/cli/handoff/packet.go",
+    "cmd/entire/cli/handoff/privacy_test.go",
+    "graph-2-impact.json",
+    "graph-4-curveball-impact.json",
+    "scripts/demo.sh"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5",
+  "turn_id": "db3919649a93",
+  "checkpoint_transcript_start": 104,
+  "transcript_lines_at_start": 104,
+  "compact_transcript_start": 21,
+  "token_usage": {
+    "input_tokens": 44,
+    "cache_creation_tokens": 28121,
+    "cache_read_tokens": 2704245,
+    "output_tokens": 14603,
+    "api_call_count": 22
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-09-06T09:12:51.424684314Z",
+    "agent_lines": 523,
+    "agent_removed": 168,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 523,
+    "total_lines_changed": 691,
+    "agent_percentage": 100,
+    "metric_version": 2
+  }
+}
