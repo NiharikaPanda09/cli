@@ -127,6 +127,57 @@ func TestPrivacyBoundary_CompleteRangeIsNeverFlaggedIncomplete(t *testing.T) {
 	}
 }
 
+// TestPrivacyBoundary_OrdinaryConfigurationsAreNotFlagged pins the reason
+// hasGaps requires BOTH fields to be missing rather than either.
+//
+// Each case below is a routine, correctly-working setup, not a degraded one. If
+// any of them reports a gap, the "incomplete context" banner is on permanently
+// for that population, and a banner that never turns off is one nobody reads --
+// which costs us the redacted case this whole boundary exists to announce.
+//
+// The third case is this repository's own shape at the time of writing: `entire
+// handoff --json` over its checkpoints returns summaries nil and transcripts
+// present, so the either-field rule flagged every section of every packet the
+// project produced about itself.
+func TestPrivacyBoundary_OrdinaryConfigurationsAreNotFlagged(t *testing.T) {
+	t.Parallel()
+
+	transcript := []byte(`{"v":1,"type":"assistant"}`)
+	summary := &apicheckpoint.Summary{Intent: "Add a --json flag"}
+
+	for _, tc := range []struct {
+		name string
+		cp   Checkpoint
+	}{
+		{
+			// Gemini, Codex, OpenCode, Droid: compact.Compact yields no usable
+			// transcript.jsonl, so dead-end mining is unavailable by design.
+			name: "agent that produces no transcript",
+			cp:   Checkpoint{ID: testCheckpointID, Metadata: &apicheckpoint.Metadata{}, Summary: summary},
+		},
+		{
+			// Summarization switched off; every other section still works.
+			name: "summaries disabled",
+			cp:   Checkpoint{ID: testCheckpointID, Metadata: &apicheckpoint.Metadata{}, Transcript: transcript},
+		},
+		{
+			name: "both present",
+			cp:   Checkpoint{ID: testCheckpointID, Metadata: &apicheckpoint.Metadata{}, Summary: summary, Transcript: transcript},
+		},
+	} {
+		if (Input{Checkpoints: []Checkpoint{tc.cp}}).hasGaps() {
+			t.Errorf("%s: ordinary configuration reported as a gap", tc.name)
+		}
+	}
+
+	// The counterpart: a checkpoint that yielded neither is still a gap. Without
+	// this, the loop above is satisfied by a hasGaps that always returns false.
+	empty := Checkpoint{ID: testCheckpointID, Metadata: &apicheckpoint.Metadata{}}
+	if !(Input{Checkpoints: []Checkpoint{empty}}).hasGaps() {
+		t.Error("a checkpoint carrying neither a summary nor a transcript must still count as a gap")
+	}
+}
+
 // TestPrivacyBoundary_AskQueryIsRedactedBeforeLeavingTheProcess is the other
 // half of the Curveball: raw prompts must not reach the new external service.
 // --ask is typed verbatim by the user, so it is exactly the "raw prompt" the
