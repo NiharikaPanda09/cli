@@ -15,12 +15,16 @@ var Now = time.Now
 // "(unavailable: ...)" note and the rest still print. An agent that gets four
 // good sections is oriented; one that gets an error message is not.
 func Build(ctx context.Context, in Input, noGraph bool) Packet {
+	return BuildWith(ctx, in, BuildOptions{NoGraph: noGraph})
+}
+
+func BuildWith(ctx context.Context, in Input, opts BuildOptions) Packet {
 	p := Packet{
 		Repo:        in.Repo,
 		GeneratedAt: Now().UTC(),
 		Head:        in.Head,
 	}
-	for _, x := range allExtractors(noGraph) {
+	for _, x := range allExtractors(opts) {
 		sec, err := x.Extract(ctx, in)
 		if err != nil {
 			sec = Section{Name: x.Name(), Note: fmt.Sprintf("unavailable: %v", err)}

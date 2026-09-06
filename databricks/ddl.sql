@@ -47,3 +47,49 @@ FROM main.default.handoff_packets
 WHERE section_name IN ('dead_ends', 'intent')
   AND item_index >= 0
   AND item_text IS NOT NULL;
+
+-- ---------------------------------------------------------------------------
+-- Vector Search: managed embeddings, so no client ever computes a vector.
+--
+-- Delta Sync keeps the index following the table. The CLI only POSTs a query
+-- string to /api/2.0/vector-search/indexes/<name>/query; Databricks embeds it
+-- with the serving endpoint named below. That is what keeps the Go side on the
+-- standard library with no SDK and no go.mod change.
+--
+-- Change Data Feed is required for a Delta Sync index. Enable it before
+-- creating the index, or the sync fails with a non-obvious error.
+ALTER TABLE main.default.handoff_packets
+  SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
+
+-- The index itself is not SQL. Create it once, either from the Databricks UI
+-- (Compute -> Vector Search) or via REST:
+--
+--   POST /api/2.0/vector-search/endpoints
+--     {"name": "entire-handoff", "endpoint_type": "STANDARD"}
+--
+--   POST /api/2.0/vector-search/indexes
+--     {"name": "main.default.handoff_idx",
+--      "endpoint_name": "entire-handoff",
+--      "primary_key": "row_id",
+--      "index_type": "DELTA_SYNC",
+--      "delta_sync_index_spec": {
+--        "source_table": "main.default.handoff_packets",
+--        "pipeline_type": "TRIGGERED",
+--        "embedding_source_columns": [
+--          {"name": "item_text", "embedding_model_endpoint_name": "databricks-gte-large-en"}
+--        ]}}
+--
+-- Then point the CLI at it:
+--   export DATABRICKS_VECTOR_INDEX=main.default.handoff_idx
+--
+-- A Delta Sync index needs a stable primary key. The ingest binary does not
+-- emit one, so add it here rather than changing the row shape:
+ALTER TABLE main.default.handoff_packets
+  ADD COLUMN IF NOT EXISTS row_id STRING
+  COMMENT 'Stable key for Vector Search: repo_key|checkpoint_id|session_id|section_name|item_index';
+
+UPDATE main.default.handoff_packets
+  SET row_id = concat_ws('|', repo_key, checkpoint_id,
+                         cast(session_id AS STRING), section_name,
+                         cast(item_index AS STRING))
+  WHERE row_id IS NULL;

@@ -20,9 +20,11 @@ import (
 
 type handoffFlags struct {
 	checkpoint string
+	session    string
 	format     string
 	limit      int
 	noGraph    bool
+	ask        string
 }
 
 const (
@@ -57,6 +59,8 @@ func newHandoffCmd() *cobra.Command {
 		},
 	}
 	cmd.Flags().StringVar(&f.checkpoint, "checkpoint", "", "Start from this checkpoint id instead of the newest")
+	cmd.Flags().StringVar(&f.session, "session", "", "Only read checkpoints from this session id")
+	cmd.Flags().StringVar(&f.ask, "ask", "", "Search the team's history for prior work on this task")
 	cmd.Flags().StringVar(&f.format, "format", handoffFormatMarkdown, "Output format: md or json")
 	cmd.Flags().IntVar(&f.limit, "limit", handoff.DefaultLimit, "Maximum checkpoints to read")
 	cmd.Flags().BoolVar(&f.noGraph, "no-graph", false, "Skip the graph-derived blast-radius section")
@@ -85,12 +89,17 @@ func runHandoff(ctx context.Context, out io.Writer, f *handoffFlags) error {
 		Head:       handoffHeadCheckpoint(ctx, repo),
 		Limit:      f.limit,
 		Checkpoint: f.checkpoint,
+		Session:    f.session,
 	})
 	if err != nil {
 		return fmt.Errorf("read checkpoints: %w", err)
 	}
 
-	packet := handoff.Build(ctx, in, f.noGraph)
+	opts := handoff.BuildOptions{NoGraph: f.noGraph, Ask: f.ask}
+	if cfg, ok := handoff.VectorConfigFromEnv(); ok {
+		opts.Searcher = handoff.NewVectorSearcher(cfg)
+	}
+	packet := handoff.BuildWith(ctx, in, opts)
 
 	if f.format == handoffFormatJSON {
 		if err := handoff.RenderJSON(out, packet); err != nil {

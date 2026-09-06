@@ -25,6 +25,7 @@ type LoadOptions struct {
 	Head       string
 	Limit      int    // max checkpoints; <= 0 means DefaultLimit
 	Checkpoint string // start here instead of the newest
+	Session    string // only checkpoints from this session id
 	Graph      GraphRunner
 }
 
@@ -78,6 +79,9 @@ func Load(ctx context.Context, store Store, opts LoadOptions) (Input, error) {
 		if ctx.Err() != nil || attempts >= maxAttempts || Now().After(deadline) {
 			in.Truncated = true
 			break
+		}
+		if opts.Session != "" && !checkpointHasSession(info, opts.Session) {
+			continue
 		}
 		attempts++
 		in.Listed++
@@ -138,4 +142,16 @@ func skipUntil(infos []apicheckpoint.CheckpointInfo, want string) []apicheckpoin
 		}
 	}
 	return infos
+}
+
+func checkpointHasSession(info apicheckpoint.CheckpointInfo, want string) bool {
+	if info.SessionID == want {
+		return true
+	}
+	for _, id := range info.SessionIDs {
+		if id == want {
+			return true
+		}
+	}
+	return false
 }

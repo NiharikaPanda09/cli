@@ -8,14 +8,25 @@ package handoff
 // in stubs.go, so no shared file is ever changed twice and the wiring cannot
 // conflict during integration. Adding a section -- including one a curveball
 // demands -- is a new file plus one stub deletion.
-func allExtractors(noGraph bool) []Extractor {
+type BuildOptions struct {
+	NoGraph  bool
+	Searcher VectorSearcher
+	Ask      string
+}
+
+func allExtractors(opts BuildOptions) []Extractor {
 	xs := []Extractor{
 		newIntentExtractor(),
 		newOpenItemsExtractor(),
 		newDeadEndsExtractor(),
 	}
-	if !noGraph {
+	if !noGraph(opts) {
 		xs = append(xs, newSurfaceExtractor())
+	}
+	if opts.Searcher != nil || opts.Ask != "" {
+		xs = append(xs, newGlobalMemoryExtractor(opts.Searcher, opts.Ask))
 	}
 	return append(xs, newStoppedExtractor())
 }
+
+func noGraph(o BuildOptions) bool { return o.NoGraph }
