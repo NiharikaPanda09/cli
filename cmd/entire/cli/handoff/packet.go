@@ -73,18 +73,35 @@ type Input struct {
 }
 
 // hasGaps reports whether this checkpoint range contains evidence of missing
-// or redacted data: unreadable/truncated checkpoints at the range level, or a
-// loaded checkpoint with no Summary or no Transcript. It is the signal every
-// section uses to mark itself Incomplete -- see the Privacy Boundary note on
-// Section.Incomplete. Deliberately over-inclusive: a section that might be
-// missing something must say so, even if that particular section did not end
-// up needing the missing field.
+// or redacted data. It is the signal every section uses to mark itself
+// Incomplete -- see the Privacy Boundary note on Section.Incomplete.
+//
+// Two kinds of evidence count, and the second is deliberately narrow:
+//
+//   - Range level: a checkpoint that could not be read at all, or a range we
+//     stopped reading early. Something we meant to look at is definitely
+//     missing from the packet.
+//   - Checkpoint level: a checkpoint we DID load that yielded nothing usable --
+//     neither a Summary nor a Transcript. A checkpoint should always carry at
+//     least one of the two, so having neither means content that existed when
+//     the session ran is not here now.
+//
+// The narrowness is the point. An earlier rule flagged a gap when a checkpoint
+// was missing EITHER field, which sounds safer and is in fact useless: the
+// Transcript is Claude-Code-only (compact.Compact produces nothing usable for
+// several agents -- see the disclosure in BUILDATHON.md), and the Summary is
+// nil whenever summarization is switched off. Under that rule every packet
+// produced by a Gemini or Codex user, and every packet produced with summaries
+// disabled, carried a permanent "incomplete context" banner. A warning that is
+// always on is a warning nobody reads, which costs us the one case it exists to
+// announce -- so a field that is routinely absent by configuration is not, on
+// its own, evidence that anything was taken away.
 func (in Input) hasGaps() bool {
 	if in.Unreadable > 0 || in.Truncated {
 		return true
 	}
 	for _, cp := range in.Checkpoints {
-		if cp.Summary == nil || len(cp.Transcript) == 0 {
+		if cp.Summary == nil && len(cp.Transcript) == 0 {
 			return true
 		}
 	}

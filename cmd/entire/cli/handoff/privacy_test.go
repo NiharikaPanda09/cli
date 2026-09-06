@@ -6,7 +6,36 @@ import (
 	"testing"
 
 	apicheckpoint "github.com/entireio/cli/api/checkpoint"
+	"github.com/entireio/cli/redact"
 )
+
+// redactableSecret is the credential the two query-redaction tests below plant
+// in their input. It is a GitHub personal-access-token shape because that is
+// one the local pipeline actually recognizes.
+//
+// It is deliberately NOT an AWS access key id. These tests were first written
+// with "AKIAABCDEFGHIJKLMNOP" and failed: redact.String passes bare AWS key ids
+// through untouched -- including AWS's own documented AKIAIOSFODNN7EXAMPLE, and
+// including one sitting next to an aws_access_key_id = prefix. Its entropy
+// (3.88) is under the 4.5 threshold for layer 1, and the betterleaks ruleset
+// does not claim it in isolation at layer 2. That is a real hole in redact, not
+// in the handoff boundary, so it is tracked there rather than papered over
+// here; if you come to make this fixture more realistic, pick a shape
+// TestPrivacyBoundary_FixtureSecretIsActuallyRedactable still passes on.
+const redactableSecret = "ghp_abcdefghijklmnopqrstuvwxyz0123456789"
+
+// TestPrivacyBoundary_FixtureSecretIsActuallyRedactable pins the assumption the
+// two tests below rest on. Without it, a change to the redaction ruleset would
+// leave them passing while asserting nothing: a query that was never redacted
+// also does not contain the redacted form of the secret.
+func TestPrivacyBoundary_FixtureSecretIsActuallyRedactable(t *testing.T) {
+	t.Parallel()
+
+	if got := redact.String(redactableSecret); strings.Contains(got, redactableSecret) {
+		t.Fatalf("fixture secret is no longer detected by redact.String (got %q); "+
+			"the query-redaction tests below are now vacuous -- pick a shape the pipeline catches", got)
+	}
+}
 
 // redactedCheckpointFixture models a checkpoint from a sensitive repository:
 // Metadata is present (so files-touched and attribution still resolve), but
@@ -105,14 +134,16 @@ func TestPrivacyBoundary_CompleteRangeIsNeverFlaggedIncomplete(t *testing.T) {
 func TestPrivacyBoundary_AskQueryIsRedactedBeforeLeavingTheProcess(t *testing.T) {
 	t.Parallel()
 
-	const secret = "AKIAABCDEFGHIJKLMNOP" // recognizable AWS access-key-id shape
 	s := &fakeSearcher{}
-	if _, err := newGlobalMemoryExtractor(s, "why did "+secret+" get committed").
+	if _, err := newGlobalMemoryExtractor(s, "why did "+redactableSecret+" get committed").
 		Extract(context.Background(), intentInput()); err != nil {
 		t.Fatalf("Extract: %v", err)
 	}
-	if strings.Contains(s.gotText, secret) {
+	if strings.Contains(s.gotText, redactableSecret) {
 		t.Errorf("raw secret reached the outgoing query text: %q", s.gotText)
+	}
+	if s.gotText == "" {
+		t.Error("the query never reached the searcher at all; this test would pass for the wrong reason")
 	}
 }
 
@@ -122,19 +153,21 @@ func TestPrivacyBoundary_AskQueryIsRedactedBeforeLeavingTheProcess(t *testing.T)
 func TestPrivacyBoundary_AutoDerivedQueryIsRedactedToo(t *testing.T) {
 	t.Parallel()
 
-	const secret = "AKIAABCDEFGHIJKLMNOP"
 	in := Input{
 		Checkpoints: []Checkpoint{{
 			ID:       testCheckpointID,
 			Metadata: &apicheckpoint.Metadata{},
-			Summary:  &apicheckpoint.Summary{Intent: "rotate " + secret + " immediately"},
+			Summary:  &apicheckpoint.Summary{Intent: "rotate " + redactableSecret + " immediately"},
 		}},
 	}
 	s := &fakeSearcher{}
 	if _, err := newGlobalMemoryExtractor(s, "").Extract(context.Background(), in); err != nil {
 		t.Fatalf("Extract: %v", err)
 	}
-	if strings.Contains(s.gotText, secret) {
+	if strings.Contains(s.gotText, redactableSecret) {
 		t.Errorf("raw secret from Summary.Intent reached the outgoing query text: %q", s.gotText)
+	}
+	if s.gotText == "" {
+		t.Error("the auto-derived query never reached the searcher at all; this test would pass for the wrong reason")
 	}
 }
