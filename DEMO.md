@@ -1,83 +1,67 @@
-# Entire Handoff — Demo Guide
+# Entire Handoff — Demo Guide & Speaker Notes
 
 > **Track 1: Build a Checkpoint-Native Developer Experience**  
-> *Turn Entire Checkpoints into cited, high-trust handoff briefings so developers and agents resume work oriented instead of blind.*
+> *Turn Entire Checkpoints into cited, high-trust handoff briefings so developers and AI agents resume work oriented instead of blind.*
 
 ---
 
-## 🎬 Quick-Start Demo (1 Command)
+## 🎬 How to Run the Demo
 
-To run the interactive terminal demo:
-
+### Interactive Mode (Recommended for live presentations)
 ```bash
 ./scripts/demo.sh
 ```
+*Pauses after each step with clear explanations. Press `Enter` to advance.*
 
-Or non-interactive automated mode:
-
+### Automated Mode (Fast / Non-interactive)
 ```bash
 ./scripts/demo.sh --auto
 ```
 
 ---
 
-## 🔍 Step-by-Step Demo Walkthrough
+## 🔍 Step-by-Step Walkthrough & Explanations
 
-### 1. Show Checkpoint-Native Storage
-Checkpoints live directly inside Git, not in a centralized SaaS silo:
-```bash
-# Check Entire status and enabled hooks
-entire status
-
-# Inspect native Git checkpoint references
-git for-each-ref refs/entire/checkpoints/
-```
-
-### 2. Run `entire handoff` (Human-Readable Markdown)
-Build an instant briefing from recent session checkpoints:
-```bash
-entire handoff
-```
-**Key Highlights to point out:**
-- **Intent**: What previous sessions were trying to achieve.
-- **Still Open**: Tasks, tests, or questions left unresolved.
-- **Already Tried (Dead Ends)**: Approaches attempted by AI agents that failed, with tool error logs and pivot rationale.
-- **Blast Radius**: Impact surface analysis from `entire graph diff`.
-- **Where it Stopped**: Last touched files, agent attribution ratio, token usage.
-- **Verifiable Citations**: Every claim has a `[01M1...]` tag linking directly to a real checkpoint.
-
-### 3. Verify Any Citation
-Drill into any cited session claim using Entire CLI:
-```bash
-entire checkpoint explain <checkpoint-id>
-```
-
-### 4. Agent Ingestion (`entire handoff --json`)
-Show how fresh AI coding sessions bootstrap their context window:
-```bash
-entire handoff --json
-```
-- Can be installed as a pre-session skill:
-  ```bash
-  entire enable --handoff-skill
-  ```
-
-### 5. Databricks & Delta Lake Ingestion (`handoff-databricks`)
-Ingest handoff packets into Unity Catalog & Delta tables for organizational analytics:
-```bash
-# Ingest handoff packet to Databricks Delta Lake
-./handoff-databricks --packet cmd/handoff-databricks/testdata/packet.json
-```
-- SQL Schema DDL: [`databricks/ddl.sql`](databricks/ddl.sql)
+### Step 1: Checkpoint Storage & Status
+- **What it does:** Displays `entire status` and lists references under `.git/refs/entire/checkpoints/`.
+- **Explanation:** Entire stores all agent session transcripts, tool calls, and diffs as native Git objects directly inside your repository. No proprietary SaaS silo or external database is required for core functionality. Checkpoints travel alongside your code during `git push` and `git pull`.
 
 ---
 
-## 💡 Why This Wins Track 1
+### Step 2: Live `entire handoff` Generation
+- **What it does:** Runs `entire handoff --limit 5` on the live repository.
+- **Explanation:** Synthesizes an orientation briefing in seconds:
+  1. **What we were trying to do (Intent)** — Session goals extracted from summaries.
+  2. **Still Open** — Unresolved tasks and promises.
+  3. **Already Tried (Dead Ends)** — Approaches that failed.
+  4. **Blast Radius** — Entity impact analysis from `entire graph diff`.
+  5. **Where it Stopped** — Current HEAD checkpoint, attribution, token counts.
+  6. **Citations (`[01M1...]`)** — Every single line is linked to a verifiable checkpoint ID.
 
-| Feature | Git Diffs Alone | Entire Handoff |
-| :--- | :--- | :--- |
-| **Dead-End Detection** | ❌ None (failed tool calls discarded) | ✅ Mined from checkpoint transcripts |
-| **Session Intent** | ⚠️ Only commit messages (often missing) | ✅ Synthesized from agent sessions |
-| **Verifiability** | ❌ No session provenance | ✅ Every item cited by checkpoint ID |
-| **Blast Radius** | ⚠️ Raw line diffs | ✅ Graph semantic change impact |
-| **Agent Bootstrap** | ❌ Re-reads whole repo | ✅ Zero-shot orientation packet |
+---
+
+### Step 3: Dead-End Mining (The Core Innovation)
+- **What it does:** Inspects `transcript.jsonl` error blocks from sample packets.
+- **Explanation:** When an agent attempts an approach and fails (e.g., incorrect flag, missing dependency, failing test), it pivots. Standard git diffs discard this history completely. Entire Checkpoints preserve `result.status == "error"` along with the agent's pivot reason. Surfacing this prevents incoming developers and agents from wasting time and tokens repeating the exact same failed attempts.
+
+---
+
+### Step 4: Machine-Readable JSON for AI Agents
+- **What it does:** Runs `entire handoff --json`.
+- **Explanation:** Fresh agent sessions bootstrap themselves using `entire enable --handoff-skill`. Before reading files or guessing architecture, the agent consumes the structured JSON packet to gain immediate context about recent changes, open blockers, and failed experiments.
+
+---
+
+### Step 5: Databricks Delta Lake Telemetry
+- **What it does:** Demonstrates `handoff-databricks` ingestion and schema mapping from [`databricks/ddl.sql`](databricks/ddl.sql).
+- **Explanation:** Transforms handoff packets into Delta Lake tables (`entire_handoff_packets`, `entire_handoff_items`) in Databricks Unity Catalog. Engineering teams can query recurring blockers across hundreds of repositories and track AI development velocity.
+
+---
+
+### Step 6: Summary & Evaluation Highlights
+- **Why Entire Handoff Wins Track 1:**
+  1. **100% Checkpoint-Native:** Grounded in Git-backed Entire session checkpoints.
+  2. **Zero Re-Work:** Eliminates repetitive debugging loops.
+  3. **Verifiable Provenance:** Every claim is backed by an immutable checkpoint ID.
+  4. **Dual-Mode Output:** Human-readable Markdown and machine-parsable JSON.
+  5. **Fast & Offline:** Runs in milliseconds with zero required external API keys.
